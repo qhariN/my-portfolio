@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Jhorman Rus</title>
+        <title>𝐉𝐡𝐨𝐫𝐦𝐚𝐧 𝐑𝐮𝐬</title>
         <meta name="description" content="Jhorman Ruswel Tito Tito Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
