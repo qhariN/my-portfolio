@@ -14,7 +14,7 @@ export default function Navbar () {
   const activeLink = (link: string) => router.pathname === link
 
   return (
-    <Disclosure as="nav" className="sticky top-0 shadow-md shadow-gray-300">
+    <Disclosure as="nav" className="sticky top-0 border-b-2">
       {({ open }) => (
         <>
           <div className="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-2">
