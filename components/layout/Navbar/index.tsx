@@ -14,7 +14,7 @@ export default function Navbar () {
   const activeLink = (link: string) => router.pathname === link
 
   return (
-    <Disclosure as="nav" className="sticky top-0 border-b-2">
+    <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white z-10">
       {({ open }) => (
         <>
           <div className="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-2">
@@ -39,7 +39,7 @@ export default function Navbar () {
               <Link href="/">
                 <a className={`flex items-center gap-2 text-black text-sm font-bold ${activeLink('/') ? 'underline' : 'hover:underline'}`} aria-current={activeLink('/') ? 'page' : undefined}>
                   <div className="h-9 w-9 relative">
-                    <Image className="rounded-full" src="/img/logo.png" alt="Logo" layout="fill" />
+                    <Image className="rounded-full bg-neutral-700" src="/img/logo.png" alt="Logo" layout="fill" />
                   </div>
                   Jhorman Rus
                 </a>
@@ -75,12 +75,12 @@ export default function Navbar () {
             <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
               {navigation.map(item => (
                 <Link key={item.name} href={item.href} passHref>
-                  <Disclosure.Button as="a" className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black underline px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black underline px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
                     <div className="h-5 w-5 relative">
                       <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                     </div>
                     {item.name}
-                  </Disclosure.Button>
+                  </a>
                 </Link>
               ))}
             </div>
