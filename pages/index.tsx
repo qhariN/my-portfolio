@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import RedirectLink from '../components/RedirectLink'
 
 const Home: NextPage = () => {
-  const [myGithub, setMyGithub] = useState(null)
+  const [myGithub, setMyGithub] = useState<any>(null)
 
   useEffect(() => {
     fetch('https://api.github.com/users/jhormanrus')

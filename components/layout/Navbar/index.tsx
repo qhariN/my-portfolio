@@ -39,7 +39,7 @@ export default function Navbar () {
               <Link href="/">
                 <a className={`flex items-center gap-2 text-black text-sm font-bold ${activeLink('/') ? 'underline' : 'hover:underline'}`} aria-current={activeLink('/') ? 'page' : undefined}>
                   <div className="h-9 w-9 relative">
-                    <Image className="rounded-full bg-neutral-700" src="/img/logo.png" alt="Logo" layout="fill" />
+                    <Image className="rounded-full bg-gray-300" src="/img/logo.png" alt="Logo" layout="fill" />
                   </div>
                   Jhorman Rus
                 </a>
