@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Project } from "../models/project";
-import { Repository } from "../models/repository";
-import sRepository from "../services/RepositoryService";
+import { Project } from "@models/project";
+import { Repository } from "@models/repository";
+import sRepository from "@services/RepositoryService";
 
 interface Props {
   project: Project,

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import RedirectLink from '../components/RedirectLink'
+import RedirectLink from '@components/RedirectLink'
 import { Typewriter } from 'react-simple-typewriter'
 
 const Home: NextPage = () => {

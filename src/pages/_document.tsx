@@ -5,10 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=optional"
-            rel="stylesheet"
-          />
+          {/* head */}
         </Head>
         <body>
           <Main />
