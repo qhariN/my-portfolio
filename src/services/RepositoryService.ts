@@ -1,4 +1,4 @@
-import { Project } from "../models/project";
+import { Project } from "@models/project";
 import Fetch, { apiUrl } from "./api";
 
 const sRepository = {

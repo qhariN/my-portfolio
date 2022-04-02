@@ -1,8 +1,8 @@
 import { NextPage } from "next"
 import { useEffect, useState } from "react"
-import CardProject from "../components/CardProject"
-import { Project } from "../models/project"
-import sRepository from "../services/RepositoryService"
+import CardProject from "@components/CardProject"
+import { Project } from "@models/project"
+import sRepository from "@services/RepositoryService"
 
 const Projects: NextPage = () => {
   const [projects, setProjects] = useState<Project[]>([])
