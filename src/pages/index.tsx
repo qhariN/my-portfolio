@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-    <div className='flex flex-col-reverse md:flex-row items-center gap-6 py-4'>
+    <div className='flex flex-col-reverse md:flex-row items-center gap-6 my-auto'>
       <div className='flex flex-col space-y-4'>
         <h1 className='text-2xl font-bold'>Hey, I&#39;m Jhorman.</h1>
         <div className='space-y-2'>

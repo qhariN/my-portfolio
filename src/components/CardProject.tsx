@@ -11,6 +11,11 @@ interface Props {
 
 export default function CardProject ({ project, priority }: Props) {
   const [repository, setRepository] = useState<Repository>()
+  const [hasImages, setHasImages] = useState<boolean>(false)
+
+  useEffect(() => {
+    setHasImages(project.images.length > 0)
+  }, [project.images])
 
   useEffect(() => {
     sRepository.byName(project.github_name)
@@ -21,13 +26,15 @@ export default function CardProject ({ project, priority }: Props) {
 
   return (
     <div className='flex flex-col border-2 rounded-xl overflow-hidden'>
-      <div className="relative w-full pt-[56.25%]">
-        <Image src={project.images[0]} layout="fill" objectFit="cover" priority={priority} alt="desc" draggable="false" />
-      </div>
-      <div className="flex-grow flex flex-col p-4 pt-3">
+      {hasImages && (
+        <div className="relative w-full pt-[56.25%]">
+          <Image src={project.images[0]} layout="fill" objectFit="cover" priority={priority} alt="desc" draggable="false" />
+        </div>
+      )}
+      <div className={`flex-grow flex flex-col p-4 pt-3 ${hasImages && 'border-t-2'}`}>
         <h1 className="text-md font-bold">{project.name}</h1>
         <p className="text-sm flex-grow">{repository?.description}</p>
-        <div className="break-words space-x-2 text-xs text-gray-400">
+        <div className="break-words space-x-2 text-xs text-slate-400">
           {repository?.topics.map(topic => (
             <a key={topic}>#{topic}</a>
           ))}
