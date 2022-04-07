@@ -3,4 +3,5 @@ export interface Project {
   github_name: string
   images:      string[]
   demo:        boolean
+  visible:     boolean
 }

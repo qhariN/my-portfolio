@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const navigation = [
-  { name: 'Articles', href: '/blog', icon: 'article.svg' },
+  // { name: 'Articles', href: '/blog', icon: 'article.svg' },
   { name: 'Projects', href: '/projects', icon: 'coding.svg' },
   { name: 'About me', href: '/me', icon: 'sd-card.svg' }
 ]
@@ -46,10 +46,10 @@ export default function Navbar () {
               </Link>
               <div className="flex-1 flex items-center justify-center sm:items-stretch">
                 <div className="hidden sm:block">
-                  <div className="flex space-x-2 text-sm text-gray-400 uppercase">
+                  <div className="flex space-x-2 text-sm text-slate-400 uppercase">
                     {navigation.map(item => (
                       <Link key={item.name} href={item.href}>
-                        <a className={activeLink(item.href) ? 'flex items-center gap-2 text-black underline px-3 py-2' : 'flex items-center gap-2 hover:underline px-3 py-2'} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                        <a className={activeLink(item.href) ? 'flex items-center gap-2 text-black underline decoration-teal-600 decoration-2 px-3 py-2' : 'flex items-center gap-2 hover:underline px-3 py-2'} aria-current={activeLink(item.href) ? 'page' : undefined}>
                           <div className="h-5 w-5 relative">
                             <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                           </div>
@@ -61,7 +61,7 @@ export default function Navbar () {
                 </div>
               </div>
               <div className="flex items-center">
-                <button type="button" className="p-1 text-gray-400 hover:text-black">
+                <button type="button" className="p-1 text-slate-400 hover:text-black">
                   <span className="sr-only">View notifications</span>
                   <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -72,7 +72,7 @@ export default function Navbar () {
           </div>
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
+            <div className="px-2 pb-2 space-y-1 text-sm text-slate-400 uppercase">
               {navigation.map(item => (
                 <Link key={item.name} href={item.href} passHref>
                   <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black underline px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>

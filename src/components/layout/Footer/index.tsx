@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const technologies = [
-  { name: 'Javascript', icon: 'javascript.svg' },
   { name: 'Typescript', icon: 'typescript.svg' },
   { name: 'Tailwind CSS', icon: 'tailwindcss.svg' },
   { name: 'PostCss', icon: 'postcss.svg' },
@@ -9,9 +8,6 @@ const technologies = [
   { name: 'React', icon: 'react.svg' },
   { name: 'Node.js', icon: 'nodejs.svg' },
   { name: 'Vercel', icon: 'vercel.svg' },
-  { name: 'IFTTT', icon: 'ifttt.svg' },
-  { name: 'Prisma', icon: 'prisma.svg' },
-  { name: 'PostgreSQL', icon: 'postgresql.svg' }
 ]
 
 const socials = [
