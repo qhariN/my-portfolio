@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const navigation = [
   // { name: 'Articles', href: '/blog', icon: 'article.svg' },
   { name: 'Projects', href: '/projects', icon: 'coding.svg' },
-  { name: 'About me', href: '/me', icon: 'sd-card.svg' }
+  { name: 'About me', href: '/me', icon: 'resume.svg' }
 ]
 
 export default function Navbar () {
@@ -14,7 +14,7 @@ export default function Navbar () {
   const activeLink = (link: string) => router.pathname === link
 
   return (
-    <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white z-10">
+    <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
       {({ open }) => (
         <>
           <div className="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-2">
@@ -37,19 +37,19 @@ export default function Navbar () {
                 </Disclosure.Button>
               </div>
               <Link href="/">
-                <a className={`flex items-center gap-2 text-black text-sm font-bold ${activeLink('/') ? 'underline' : 'hover:underline'}`} aria-current={activeLink('/') ? 'page' : undefined}>
+                <a className={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
                   <div className="h-9 w-9 relative">
-                    <Image className="rounded-full bg-gray-300" src="/img/logo.png" alt="Logo" layout="fill" />
+                    <Image className="rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" layout="fill" />
                   </div>
                   Jhorman Rus
                 </a>
               </Link>
               <div className="flex-1 flex items-center justify-center sm:items-stretch">
                 <div className="hidden sm:block">
-                  <div className="flex space-x-2 text-sm text-slate-400 uppercase">
+                  <div className="flex space-x-2 text-sm text-gray-400 uppercase">
                     {navigation.map(item => (
                       <Link key={item.name} href={item.href}>
-                        <a className={activeLink(item.href) ? 'flex items-center gap-2 text-black underline decoration-teal-600 decoration-2 px-3 py-2' : 'flex items-center gap-2 hover:underline px-3 py-2'} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                        <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
                           <div className="h-5 w-5 relative">
                             <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                           </div>
@@ -72,10 +72,10 @@ export default function Navbar () {
           </div>
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pb-2 space-y-1 text-sm text-slate-400 uppercase">
+            <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
               {navigation.map(item => (
                 <Link key={item.name} href={item.href} passHref>
-                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black underline px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
                     <div className="h-5 w-5 relative">
                       <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                     </div>

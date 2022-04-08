@@ -11,14 +11,14 @@ const technologies = [
 ]
 
 const socials = [
-  { name: 'Github', href: 'https://github.com/jhormanrus', icon: 'github.svg' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/jhorman-ruswel-tito-tito-8933ba127/', icon: 'linkedin.svg' },
-  { name: 'Dev.to', href: 'https://dev.to/jhormanrus', icon: 'devto.svg' }
+  { name: 'Github', href: 'https://github.com/jhormanrus', icon: 'github.svg', invert: true },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/jhorman-ruswel-tito-tito-8933ba127/', icon: 'linkedin.svg', invert: false },
+  { name: 'Dev.to', href: 'https://dev.to/jhormanrus', icon: 'devto.svg', invert: true }
 ]
 
 export default function Footer () {
   return (
-    <footer className="bg-gray-50 mt-auto">
+    <footer className="bg-gray-50 dark:bg-zinc-900 mt-auto">
       <div className="flex flex-col space-y-1 max-w-screen-lg mx-auto w-full px-2 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-col items-center space-y-2 pb-1">
           <p>A project made with</p>
@@ -30,7 +30,7 @@ export default function Footer () {
             ))}
           </div>
         </div>
-        <hr className="w-full border-t-2" />
+        <hr className="w-full border-t-2 dark:border-neutral-700" />
         <div className="flex items-center w-full text-xs">
           <div className="flex">
             <span>© {new Date().getFullYear()}</span>
@@ -39,7 +39,7 @@ export default function Footer () {
           </div>
           <div className="flex items-center gap-2 ml-auto">
             {socials.map(item => (
-              <a key={item.name} className="h-5 w-5 relative" href={item.href} target="_blank" rel="noreferrer">
+              <a key={item.name} className={`h-5 w-5 relative ${item.invert && 'dark:invert'}`} href={item.href} target="_blank" rel="noreferrer">
                 <Image src={`/svg/${item.icon}`} layout="fill" alt={item.name} title={item.name} />
               </a>
             ))}
