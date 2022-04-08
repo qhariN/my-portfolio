@@ -18,7 +18,7 @@ const Projects: NextPage = () => {
     <div className='flex flex-col'>
       <div className='text-center'>
         <h1 className='text-2xl font-bold'>Projects</h1>
-        <p>Some of my public projects. View them all on GitHub.</p>
+        <p>Some of my public projects. View them all on <a href="https://github.com/jhormanrus" className="font-bold hover:underline decoration-teal-600 decoration-2">my GitHub</a>.</p>
       </div>
       <div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 mt-4'>
         {projects.filter(project => project.visible).map((project, index) => (
