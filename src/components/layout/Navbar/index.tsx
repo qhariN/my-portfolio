@@ -2,19 +2,39 @@ import Image from "next/image";
 import { Disclosure } from '@headlessui/react';
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const navigation = [
   // { name: 'Articles', href: '/blog', icon: 'article.svg' },
   { name: 'Projects', href: '/projects', icon: 'coding.svg' },
-  { name: 'About me', href: '/me', icon: 'sd-card.svg' }
+  { name: 'About me', href: '/me', icon: 'resume.svg' }
 ]
 
 export default function Navbar () {
   const router = useRouter()
   const activeLink = (link: string) => router.pathname === link
+  const [darkTheme, setDarkTheme] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    if (darkTheme !== null) {
+      if (darkTheme) {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+      } else {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+      }
+    }
+  }, [darkTheme])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDarkTheme(document.documentElement.classList.contains('dark'))
+    })
+  }, [])
 
   return (
-    <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white z-10">
+    <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
       {({ open }) => (
         <>
           <div className="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-2">
@@ -37,19 +57,19 @@ export default function Navbar () {
                 </Disclosure.Button>
               </div>
               <Link href="/">
-                <a className={`flex items-center gap-2 text-black text-sm font-bold ${activeLink('/') ? 'underline' : 'hover:underline'}`} aria-current={activeLink('/') ? 'page' : undefined}>
+                <a className={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
                   <div className="h-9 w-9 relative">
-                    <Image className="rounded-full bg-gray-300" src="/img/logo.png" alt="Logo" layout="fill" />
+                    <Image className="rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" layout="fill" />
                   </div>
                   Jhorman Rus
                 </a>
               </Link>
               <div className="flex-1 flex items-center justify-center sm:items-stretch">
                 <div className="hidden sm:block">
-                  <div className="flex space-x-2 text-sm text-slate-400 uppercase">
+                  <div className="flex space-x-2 text-sm text-gray-400 uppercase">
                     {navigation.map(item => (
                       <Link key={item.name} href={item.href}>
-                        <a className={activeLink(item.href) ? 'flex items-center gap-2 text-black underline decoration-teal-600 decoration-2 px-3 py-2' : 'flex items-center gap-2 hover:underline px-3 py-2'} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                        <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
                           <div className="h-5 w-5 relative">
                             <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                           </div>
@@ -61,21 +81,21 @@ export default function Navbar () {
                 </div>
               </div>
               <div className="flex items-center">
-                <button type="button" className="p-1 text-slate-400 hover:text-black">
-                  <span className="sr-only">View notifications</span>
-                  <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                  </svg>
+                <button onClick={() => setDarkTheme(!darkTheme)} type="button" className="flex justify-center items-center w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700" title={`Enable ${darkTheme? 'light' : 'dark'} mode`}>
+                  <span className="sr-only">Light mode</span>
+                  <div className="w-5 h-5 relative">
+                    <Image src={`/svg/${darkTheme? 'sun' : 'moon'}.svg`} alt="light mode" layout="fill"></Image>
+                  </div>
                 </button>
               </div>
             </div>
           </div>
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pb-2 space-y-1 text-sm text-slate-400 uppercase">
+            <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
               {navigation.map(item => (
                 <Link key={item.name} href={item.href} passHref>
-                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black underline px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
                     <div className="h-5 w-5 relative">
                       <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
                     </div>
