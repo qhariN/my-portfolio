@@ -13,7 +13,7 @@ const Me: NextPage = () => {
         <ul className="list-disc marker:text-teal-600 pl-5">
           <li><b>Email</b> - jhormanrus [at] gmail [dot] com</li>
           <li><b>Phone</b> - +51 933 844 567</li>
-          <li><b>LinkedIn</b> - <a href="https://www.linkedin.com/in/jhorman-ruswel-tito-tito-8933ba127/" className="hover:underline decoration-2 decoration-teal-600">Jhorman Ruswel Tito Tito</a></li>
+          <li><b>LinkedIn</b> - <a href="https://linkedin.com/in/jhormanrus/" className="hover:underline decoration-2 decoration-teal-600">Jhorman Ruswel Tito Tito</a></li>
           <li><b>Github</b> - <a href="https://github.com/jhormanrus" className="hover:underline decoration-2 decoration-teal-600">jhormanrus</a></li>
         </ul>
       </section>

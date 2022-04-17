@@ -12,7 +12,7 @@ const technologies = [
 
 const socials = [
   { name: 'Github', href: 'https://github.com/jhormanrus', icon: 'github.svg', invert: true },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/jhorman-ruswel-tito-tito-8933ba127/', icon: 'linkedin.svg', invert: false },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/jhormanrus/', icon: 'linkedin.svg', invert: false },
   { name: 'Dev.to', href: 'https://dev.to/jhormanrus', icon: 'devto.svg', invert: true }
 ]
 

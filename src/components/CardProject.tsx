@@ -54,6 +54,14 @@ export default function CardProject ({ project, priority }: Props) {
               Demo
             </a>
           )}
+          {project.npm && (
+            <a className="flex items-center gap-1 hover:underline" href={project.npm} target="_blank" rel="noreferrer">
+              <div className="h-4 w-4 relative">
+                <Image src={`/svg/npm.svg`} layout="fill" alt="npm" />
+              </div>
+              npm
+            </a>
+          )}
         </div>
       </div>
     </div>
