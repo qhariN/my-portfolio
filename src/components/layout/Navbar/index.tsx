@@ -1,19 +1,20 @@
 import Image from "next/image";
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Listbox, Transition } from '@headlessui/react';
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-
-const navigation = [
-  // { name: 'Articles', href: '/blog', icon: 'article.svg' },
-  { name: 'Projects', href: '/projects', icon: 'coding.svg' },
-  { name: 'About me', href: '/me', icon: 'resume.svg' }
-]
+import { Fragment, useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 export default function Navbar () {
   const router = useRouter()
+  const { t } = useTranslation()
   const activeLink = (link: string) => router.pathname === link
   const [darkTheme, setDarkTheme] = useState<boolean | null>(null)
+  const navigation = [
+    { name: t('articles'), href: '/blog', icon: 'article.svg' },
+    { name: t('projects'), href: '/projects', icon: 'coding.svg' },
+    { name: t('aboutMe'), href: '/me', icon: 'resume.svg' }
+  ]
 
   useEffect(() => {
     if (darkTheme !== null) {
@@ -32,6 +33,11 @@ export default function Navbar () {
       setDarkTheme(document.documentElement.classList.contains('dark'))
     })
   }, [])
+
+  const onLocaleChange = (locale: string) => {
+    document.cookie = `NEXT_LOCALE=${locale}`
+    router.push(router.asPath, router.asPath, { locale, scroll: false })
+  }
 
   return (
     <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
@@ -80,13 +86,38 @@ export default function Navbar () {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center gap-2">
                 <button onClick={() => setDarkTheme(!darkTheme)} type="button" className="flex justify-center items-center w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700" title={`Enable ${darkTheme? 'light' : 'dark'} mode`}>
                   <span className="sr-only">Light mode</span>
                   <div className="w-5 h-5 relative">
                     <Image src={`/svg/${darkTheme? 'sun' : 'moon'}.svg`} alt="light mode" layout="fill"></Image>
                   </div>
                 </button>
+                <Listbox value={router.locale} onChange={onLocaleChange}>
+                  <div className="relative">
+                    <Listbox.Button className="relative w-full py-1 px-2 rounded-lg border-2 dark:border-neutral-700 uppercase sm:text-sm">
+                      {router.locale}
+                    </Listbox.Button>
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <Listbox.Options className="absolute w-full mt-1 overflow-auto text-center uppercase bg-white dark:bg-zinc-900 rounded-lg border-2 dark:border-neutral-700 focus:outline-none sm:text-sm">
+                        {router.locales?.map((lang) => (
+                          <Listbox.Option
+                            key={lang}
+                            className={({ active }) => `cursor-pointer select-none py-1.5 ${active && 'underline'}`}
+                            value={lang}
+                          >
+                            {lang}
+                          </Listbox.Option>
+                        ))}
+                      </Listbox.Options>
+                    </Transition>
+                  </div>
+                </Listbox>
               </div>
             </div>
           </div>
