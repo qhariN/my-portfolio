@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from '@components/layout/Layout'
 import Head from 'next/head'
 import { useEffect } from 'react'
+import { appWithTranslation } from 'next-i18next'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -27,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
