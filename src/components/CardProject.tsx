@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Project } from "@models/project";
 import { Repository } from "@models/repository";
 import sRepository from "@services/RepositoryService";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   project: Project,
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function CardProject ({ project, priority }: Props) {
+  const { t } = useTranslation();
   const [repository, setRepository] = useState<Repository>()
   const [hasImages, setHasImages] = useState<boolean>(false)
 
@@ -44,7 +46,7 @@ export default function CardProject ({ project, priority }: Props) {
             <div className="h-4 w-4 relative dark:invert">
               <Image src={`/svg/github.svg`} layout="fill" alt="source" />
             </div>
-            Source
+            {t('source')}
           </a>
           {project.demo && (
             <a className="flex items-center gap-1 hover:underline" href={repository?.homepage} target="_blank" rel="noreferrer">

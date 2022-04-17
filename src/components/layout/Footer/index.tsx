@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 
 const technologies = [
@@ -17,11 +18,13 @@ const socials = [
 ]
 
 export default function Footer () {
+  const { t } = useTranslation()
+
   return (
     <footer className="bg-gray-50 dark:bg-zinc-900 mt-auto">
       <div className="flex flex-col space-y-1 max-w-screen-lg mx-auto w-full px-2 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-col items-center space-y-2 pb-1">
-          <p>A project made with</p>
+          <p>{t('projectMadeWith')}</p>
           <div className="flex flex-wrap justify-center gap-4 mb-2">
             {technologies.map(item => (
               <div key={item.name} className="h-9 w-9 relative">
@@ -34,8 +37,8 @@ export default function Footer () {
         <div className="flex items-center w-full text-xs">
           <div className="flex">
             <span>© {new Date().getFullYear()}</span>
-            <span className="hidden sm:block">, developed with ❤️ by <u>Jhorman Rus</u></span>
-            <span className="sm:hidden">, by <u>Jhorman Rus</u></span>
+            <span className="hidden sm:block">, {t('developedWithLove')} <u>Jhorman Rus</u></span>
+            <span className="sm:hidden">, {t('by')} <u>Jhorman Rus</u></span>
           </div>
           <div className="flex items-center gap-2 ml-auto">
             {socials.map(item => (

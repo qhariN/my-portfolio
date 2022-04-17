@@ -13,7 +13,7 @@ export default function Navbar () {
   const navigation = [
     { name: t('articles'), href: '/blog', icon: 'article.svg' },
     { name: t('projects'), href: '/projects', icon: 'coding.svg' },
-    { name: t('about_me'), href: '/me', icon: 'resume.svg' }
+    { name: t('aboutMe'), href: '/me', icon: 'resume.svg' }
   ]
 
   useEffect(() => {
