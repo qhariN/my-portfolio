@@ -43,7 +43,7 @@ export default function Navbar () {
     <Disclosure as="nav" className="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
       {({ open }) => (
         <>
-          <div className="max-w-screen-lg mx-auto px-2 sm:px-6 lg:px-8 py-2">
+          <div className="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 py-2">
             <div className="relative flex items-center justify-between">
               <div className="inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}

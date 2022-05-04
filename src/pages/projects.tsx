@@ -19,8 +19,8 @@ const Projects: NextPage = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='text-center'>
-        <h1 className='text-2xl font-bold'>{t('projects')}</h1>
+      <div className='mx-6'>
+        <h2 className='text-2xl font-bold'>{t('projects')}</h2>
         <p>
           <Trans i18nKey="projectsDescription">
             <a href="https://github.com/jhormanrus" className="font-bold hover:underline decoration-teal-600 decoration-2" />
