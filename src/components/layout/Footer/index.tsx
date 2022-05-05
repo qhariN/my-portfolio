@@ -22,7 +22,7 @@ export default function Footer () {
 
   return (
     <footer className="bg-gray-50 dark:bg-zinc-900 mt-auto">
-      <div className="flex flex-col space-y-1 max-w-screen-lg mx-auto w-full px-2 sm:px-6 lg:px-8 py-2">
+      <div className="flex flex-col space-y-1 max-w-screen-md mx-auto w-full px-2 sm:px-6 lg:px-8 py-2">
         <div className="flex flex-col items-center space-y-2 pb-1">
           <p>{t('projectMadeWith')}</p>
           <div className="flex flex-wrap justify-center gap-4 mb-2">
