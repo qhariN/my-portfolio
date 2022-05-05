@@ -1,9 +1,7 @@
-import { NextPage } from "next"
 import { Trans, useTranslation } from "next-i18next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useRouter } from "next/router"
 
-const Me: NextPage = () => {
+const MeSection: React.FC = () => {
   const router = useRouter()
   const { t } = useTranslation()
 
@@ -61,10 +59,4 @@ const Me: NextPage = () => {
   )
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...await serverSideTranslations(locale),
-  },
-})
-
-export default Me
+export default MeSection

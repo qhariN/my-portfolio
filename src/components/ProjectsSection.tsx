@@ -1,12 +1,10 @@
-import { NextPage } from "next"
 import { useEffect, useState } from "react"
 import CardProject from "@components/CardProject"
 import { Project } from "@models/project"
 import sRepository from "@services/RepositoryService"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { Trans, useTranslation } from "next-i18next"
 
-const Projects: NextPage = () => {
+const ProjectsSection: React.FC = () => {
   const { t } = useTranslation()
   const [projects, setProjects] = useState<Project[]>([])
 
@@ -36,10 +34,4 @@ const Projects: NextPage = () => {
   )
 }
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
-  props: {
-    ...await serverSideTranslations(locale),
-  },
-})
-
-export default Projects
+export default ProjectsSection
