@@ -8,5 +8,6 @@
   html {
     font-family: 'Roboto Mono', monospace;
     letter-spacing: -0.05em;
+    scroll-behavior: smooth;
   }
 }

@@ -8,12 +8,12 @@ import { useTranslation } from "next-i18next";
 export default function Navbar () {
   const router = useRouter()
   const { t } = useTranslation()
-  const activeLink = (link: string) => router.pathname === link
+  const activeLink = (link: string) => router.asPath === link
   const [darkTheme, setDarkTheme] = useState<boolean | null>(null)
   const navigation = [
-    { name: t('articles'), href: '/blog', icon: 'article.svg' },
-    { name: t('projects'), href: '/projects', icon: 'coding.svg' },
-    { name: t('aboutMe'), href: '/me', icon: 'resume.svg' }
+    // { name: t('articles'), href: '/blog', icon: 'article.svg' },
+    { name: t('projects'), href: '/#projects', icon: 'coding.svg' },
+    { name: t('aboutMe'), href: '/#me', icon: 'resume.svg' }
   ]
 
   useEffect(() => {
@@ -62,8 +62,8 @@ export default function Navbar () {
                   }
                 </Disclosure.Button>
               </div>
-              <Link href="/">
-                <a className={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
+              <Link href="/#">
+                <a className={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/#') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
                   <div className="h-9 w-9 relative">
                     <Image className="rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" layout="fill" />
                   </div>
