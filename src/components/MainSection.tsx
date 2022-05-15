@@ -31,8 +31,8 @@ const MainSection: React.FC = () => {
           <p>
             <Trans i18nKey="iInviteYou" values={{ articles: t('articles'), projects: t('projects'), aboutMe: t('aboutMe') }}>
               <RedirectLink href='/blog' />
-              <RedirectLink href='/projects' />
-              <RedirectLink href='/me' />
+              <RedirectLink href='/#projects' />
+              <RedirectLink href='/#me' />
             </Trans>
           </p>
         </div>
