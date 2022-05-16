@@ -18,8 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>𝐉𝐡𝐨𝐫𝐦𝐚𝐧 𝐑𝐮𝐬</title>
-        <meta name="description" content="Jhorman Ruswel Tito Tito Portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://jhormanrus.vercel.app/" />
+        <meta name="title" content="Jhorman Ruswel Tito Tito" />
+        <meta name="description" content="Web Developer. Passionate about software development and I like to learn new things, solve problems and team work." />
+        <meta name="author" content="Jhorman Ruswel Tito Tito" />
+        <meta name="robots" content="index,follow" />
       </Head>
       <Layout>
         <Component {...pageProps} />
