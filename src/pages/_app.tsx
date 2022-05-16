@@ -32,6 +32,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
         <meta property="og:image:alt" content="photo of the author" />
         <meta property="og:locale" content="en" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://jhormanrus.vercel.app/" />
+        <meta name="twitter:title" content="Jhorman Ruswel Tito Tito" />
+        <meta name="twitter:description" content="Web Developer. Passionate about software development." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
       </Head>
       <Layout>
         <Component {...pageProps} />
