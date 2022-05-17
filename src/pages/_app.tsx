@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>𝐉𝐡𝐨𝐫𝐦𝐚𝐧 𝐑𝐮𝐬</title>
+        <title>Jhorman Ruswel Tito</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://jhormanrus.vercel.app/" />
         <meta name="title" content="Jhorman Ruswel Tito Tito" />
