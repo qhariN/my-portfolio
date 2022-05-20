@@ -4,6 +4,7 @@ import Layout from '@components/layout/Layout'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { appWithTranslation } from 'next-i18next'
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -41,6 +42,18 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      {/* Global site tag (gtag.js) - Google Analytics */}
+      <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-3T4BGSPJ70"></Script>
+      <Script id='goo-script' strategy="lazyOnload">
+        {
+          `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3T4BGSPJ70');
+          `
+        }
+      </Script>
     </>
   )
 }
