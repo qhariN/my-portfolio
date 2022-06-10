@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react"
 import CardProject from "@components/CardProject"
 import { Project } from "@models/project"
-import sRepository from "@services/RepositoryService"
 import { Trans, useTranslation } from "next-i18next"
+import Fetch from "@services/api"
 
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation()
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
-    sRepository.all()
-      .then((data) => {
-        setProjects(data)
-      })
+    Fetch('/api/projects').then(res => {
+      setProjects(res)
+    })
   }, [])
 
   return (

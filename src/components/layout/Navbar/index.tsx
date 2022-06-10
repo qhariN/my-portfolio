@@ -123,18 +123,20 @@ export default function Navbar () {
           </div>
           {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
-              {navigation.map(item => (
-                <Link key={item.name} href={item.href} passHref>
-                  <a className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
-                    <div className="h-5 w-5 relative">
-                      <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
-                    </div>
-                    {item.name}
-                  </a>
-                </Link>
-              ))}
-            </div>
+            {({ close }) => (
+              <div className="px-2 pb-2 space-y-1 text-sm text-gray-400 uppercase">
+                {navigation.map(item => (
+                  <Link key={item.name} href={item.href} passHref>
+                    <a onClick={() => { close() }} className={`flex items-center gap-2 ${activeLink(item.href) ? 'text-black dark:text-white underline decoration-teal-600 decoration-2 px-3 py-2 ' : 'hover:underline px-3 py-2'}`} aria-current={activeLink(item.href) ? 'page' : undefined}>
+                      <div className="h-5 w-5 relative">
+                        <Image src={`/svg/${item.icon}`} alt={item.name} layout="fill" />
+                      </div>
+                      {item.name}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            )}
           </Disclosure.Panel>
         </>
       )}
