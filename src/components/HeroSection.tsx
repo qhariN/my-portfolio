@@ -5,7 +5,7 @@ import { Trans } from 'next-i18next'
 import { useTranslation } from 'next-i18next'
 import RedirectLink from '@components/RedirectLink'
 
-const MainSection: React.FC = () => {
+const HeroSection: React.FC = () => {
   const { t } = useTranslation()
   const [myGithub, setMyGithub] = useState<any>(null)
 
@@ -20,7 +20,7 @@ const MainSection: React.FC = () => {
   }, [])
 
   return (
-    <section className='flex flex-col-reverse sm:flex-row items-center gap-6 my-auto'>
+    <section id="hero" className='flex flex-col-reverse sm:flex-row items-center gap-6 my-auto'>
       <div className='flex flex-col space-y-5'>
         <div className='space-y-1'>
           <h1 className='text-3xl font-bold'>Jhorman Ruswel Tito</h1>
@@ -59,4 +59,4 @@ const MainSection: React.FC = () => {
   )
 }
 
-export default MainSection
+export default HeroSection
