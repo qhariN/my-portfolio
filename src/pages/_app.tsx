@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content="Jhorman Ruswel Tito Tito" />
         <meta name="twitter:description" content="Web Developer. Passionate about software development." />
         <meta name="twitter:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
+        <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
       </Head>
       <Layout>
         <Component {...pageProps} />
