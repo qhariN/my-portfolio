@@ -14,7 +14,6 @@ const MeSection: React.FC = () => {
       <section>
         <ul className="list-disc marker:text-teal-600 pl-5">
           <li><b>{t('email')}</b> - jhormanrus [at] gmail [dot] com</li>
-          <li><b>{t('phone')}</b> - +51 933 844 567</li>
           <li><b>LinkedIn</b> - <a href="https://linkedin.com/in/jhormanrus/" className="hover:underline decoration-2 decoration-teal-600">Jhorman Ruswel Tito Tito</a></li>
           <li><b>Github</b> - <a href="https://github.com/jhormanrus" className="hover:underline decoration-2 decoration-teal-600">jhormanrus</a></li>
         </ul>
