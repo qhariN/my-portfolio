@@ -36,9 +36,8 @@ export default function Footer () {
         <hr className="w-full border-t-2 dark:border-neutral-700" />
         <div className="flex items-center w-full text-xs">
           <div className="flex">
-            <span>© {new Date().getFullYear()}</span>
-            <span className="hidden sm:block">, {t('developedWithLove')} <u>Jhorman Rus</u></span>
-            <span className="sm:hidden">, {t('by')} <u>Jhorman Rus</u></span>
+            <span className="hidden sm:block">{t('developedWithLove')} <u>Jhorman Rus</u></span>
+            <span className="sm:hidden">{t('by')} <u>Jhorman Rus</u></span>
           </div>
           <div className="flex items-center gap-2 ml-auto">
             {socials.map(item => (
