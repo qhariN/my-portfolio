@@ -53,10 +53,18 @@
   {
     "npm": null,
     "demo": true,
-    "name": "My portfolio",
+    "name": "Bibdle",
     "images": [
-      "https://res.cloudinary.com/jhormanrus/image/upload/v1650299654/my-repositories/my-portfolio/1.jpg"
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1671306351/my-repositories/bibdle/1.jpg"
     ],
+    "visible": true,
+    "github_name": "jhormanrus/bibdle"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "My portfolio",
+    "images": [],
     "visible": true,
     "github_name": "jhormanrus/my-portfolio"
   },
@@ -127,5 +135,13 @@
     "images": [],
     "visible": true,
     "github_name": "jhormanrus/himnario-adventista-api"
+  },
+  {
+    "npm": null,
+    "demo": false,
+    "name": "Biblia API",
+    "images": [],
+    "visible": true,
+    "github_name": "jhormanrus/biblia-api"
   }
 ]
