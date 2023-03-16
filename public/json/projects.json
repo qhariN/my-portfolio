@@ -1,0 +1,147 @@
+[
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Next.js Scraper Playground",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1667969851/my-repositories/nextjs-scraper-playground/1.jpg"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/nextjs-scraper-playground"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Himnario Adventista Broadcast",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1650001781/my-repositories/himnario-adventista/1.png"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/himnario-adventista-broadcast"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Edulingo",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648782337/my-repositories/edulingo/1.jpg",
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648782340/my-repositories/edulingo/2.jpg"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/EduLingo"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Foxbel",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648790467/my-repositories/foxbel/1.jpg"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/Foxbel"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Ayudar Hace Bien",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1650250708/my-repositories/ayudar-hace-bien/1.jpg"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/ayudar-hace-bien"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Bibdle",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1671306351/my-repositories/bibdle/1.jpg"
+    ],
+    "visible": true,
+    "github_name": "jhormanrus/bibdle"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "My portfolio",
+    "images": [],
+    "visible": true,
+    "github_name": "jhormanrus/my-portfolio"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Desafío bsale",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648936496/my-repositories/desafio-bsale/1.jpg"
+    ],
+    "visible": false,
+    "github_name": "jhormanrus/desafio-bsale-front"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Desafio Defontana",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648939348/my-repositories/desafio-defontana/1.jpg",
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648939348/my-repositories/desafio-defontana/2.jpg",
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648939348/my-repositories/desafio-defontana/3.jpg"
+    ],
+    "visible": false,
+    "github_name": "jhormanrus/desafio-defontana"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Demo QR Scanner",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648938374/my-repositories/qr-scanner/1.jpg"
+    ],
+    "visible": false,
+    "github_name": "jhormanrus/demo-qr-scanner"
+  },
+  {
+    "npm": null,
+    "demo": true,
+    "name": "Rustica",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648837797/my-repositories/rustica/1.jpg"
+    ],
+    "visible": false,
+    "github_name": "jhormanrus/rustica-exercise"
+  },
+  {
+    "npm": null,
+    "demo": false,
+    "name": "Trinche",
+    "images": [
+      "https://res.cloudinary.com/jhormanrus/image/upload/v1648939975/my-repositories/trinche/1.png"
+    ],
+    "visible": false,
+    "github_name": "jhormanrus/Trinche"
+  },
+  {
+    "npm": "https://www.npmjs.com/package/@jhormanrus/zxcvbn-lang-es",
+    "demo": false,
+    "name": "zxcvbn",
+    "images": [],
+    "visible": true,
+    "github_name": "jhormanrus/zxcvbn"
+  },
+  {
+    "npm": null,
+    "demo": false,
+    "name": "Himnario Adventista API",
+    "images": [],
+    "visible": true,
+    "github_name": "jhormanrus/himnario-adventista-api"
+  },
+  {
+    "npm": null,
+    "demo": false,
+    "name": "Biblia API",
+    "images": [],
+    "visible": true,
+    "github_name": "jhormanrus/biblia-api"
+  }
+]
