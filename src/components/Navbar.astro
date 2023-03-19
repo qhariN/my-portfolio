@@ -1,0 +1,89 @@
+---
+import { t } from 'i18next'
+
+const activeLink = link => Astro.url.pathname === link
+const navigation = [
+  // { name: t('articles'), href: '/blog', icon: 'article.svg' },
+  { name: t('projects'), href: 'projects', icon: 'coding.svg' },
+  { name: t('aboutMe'), href: 'me', icon: 'resume.svg' }
+]
+
+// useEffect(() => {
+//   if (darkTheme !== null) {
+//     if (darkTheme) {
+//       localStorage.theme = 'dark'
+//       document.documentElement.classList.add('dark')
+//     } else {
+//       localStorage.theme = 'light'
+//       document.documentElement.classList.remove('dark')
+//     }
+//   }
+// }, [darkTheme])
+
+// useEffect(() => {
+//   setTimeout(() => {
+//     setDarkTheme(document.documentElement.classList.contains('dark'))
+//   })
+// }, [])
+
+// const onLocaleChange = (locale: string) => {
+//   document.cookie = `NEXT_LOCALE=${locale}`
+//   router.push(router.asPath, router.asPath, { locale, scroll: false })
+// }
+---
+
+<nav class="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
+  <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 py-2">
+    <div class="relative flex items-center justify-between">
+      <a href="#">
+        <a class={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/#') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
+          <div class="h-9 w-9">
+            <img class="w-full h-full rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" />
+          </div>
+          Jhorman Rus
+        </a>
+      </a>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch">
+        <div class="flex space-x-2 text-sm text-gray-400 uppercase">
+          {navigation.map(item => (
+            <a class="flex items-center gap-2 px-3 py-2 hover:underline target:text-black target:dark:text-white target:underline target:decoration-teal-600 target:decoration-2" id={item.href} href={`#${item.href}`}>
+              <img class="w-5 h-5" src={`/svg/${item.icon}`} alt={item.name} />
+              <>{item.name}</>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <!-- <button onClick={() => setDarkTheme(!darkTheme)} type="button" class="flex justify-center items-center w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700" title={`Enable ${darkTheme? 'light' : 'dark'} mode`}>
+          <span class="sr-only">Light mode</span>
+          <img class="w-5 h-5" src={`/svg/${darkTheme? 'sun' : 'moon'}.svg`} alt="light mode" />
+        </button> -->
+        <!-- <Listbox value={router.locale} onChange={onLocaleChange}>
+          <div class="relative">
+            <Listbox.Button class="relative w-full py-1 px-2 rounded-lg border-2 dark:border-neutral-700 uppercase sm:text-sm">
+              {router.locale}
+            </Listbox.Button>
+            <Transition
+              as={Fragment}
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Listbox.Options class="absolute w-full mt-1 overflow-auto text-center uppercase bg-white dark:bg-zinc-900 rounded-lg border-2 dark:border-neutral-700 focus:outline-none sm:text-sm">
+                {router.locales?.map((lang) => (
+                  <Listbox.Option
+                    key={lang}
+                    class={({ active }) => `cursor-pointer select-none py-1.5 ${active && 'underline'}`}
+                    value={lang}
+                  >
+                    {lang}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Transition>
+          </div>
+        </Listbox> -->
+      </div>
+    </div>
+  </div>
+</nav>

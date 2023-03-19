@@ -1,6 +1,6 @@
 ---
 import Footer from '../components/Footer.astro'
-
+import Navbar from '../components/Navbar.astro'
 ---
 
 <!DOCTYPE html>
@@ -34,6 +34,7 @@ import Footer from '../components/Footer.astro'
   </head>
   <body>
     <div class="flex flex-col min-h-screen dark:text-white dark:bg-zinc-800">
+      <Navbar />
       <main class="max-w-screen-md mx-auto w-full flex flex-col flex-grow px-2 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <slot />
       </main>
@@ -43,9 +44,9 @@ import Footer from '../components/Footer.astro'
 </html>
 
 <style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
   html {
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Karla', cursive;
     letter-spacing: -0.05em;
     scroll-behavior: smooth;
   }
