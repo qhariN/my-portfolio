@@ -1,0 +1,36 @@
+---
+import { t } from 'i18next'
+---
+
+<section id="hero" class='flex flex-col-reverse sm:flex-row items-center gap-6 my-auto'>
+  <div class='flex flex-col space-y-5'>
+    <div class='space-y-1'>
+      <h1 class='text-3xl font-bold'>Jhorman Ruswel Tito</h1>
+      <h2 class='text-xl font-bold text-gray-400'>{t('webDeveloper')}</h2>
+    </div>
+    <div class='space-y-2'>
+      <!-- <p>{t('myDescription')} <b><Typewriter words={t('iLike', { returnObjects: true })} typeSpeed={40} deleteSpeed={20} loop={false} cursorStyle={'_'} cursor={true} /></b></p> -->
+      <p>
+        <!-- <Trans i18nKey="iInviteYou" values={{ articles: t('articles'), projects: t('projects'), aboutMe: t('aboutMe') }}>
+          <RedirectLink href='/blog' />
+          <RedirectLink href='/#projects' />
+          <RedirectLink href='/#me' />
+        </Trans> -->
+      </p>
+    </div>
+    <div class='flex gap-4 items-center'>
+      <a href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
+        <img class="w-5 h-5 relative" src="/svg/linkedin.svg" alt="linkedin" />
+      </a>
+      <!-- <a class="text-gray-400 flex items-center gap-2 hover:underline" href={myGithub?.html_url} target="_blank" rel="noreferrer">
+        <img class="w-5 h-5 relative dark:invert" src="/svg/github.svg" alt="github" />
+        {t('followersOnGithub', { followers: myGithub?.followers })}
+      </a> -->
+    </div>
+  </div>
+  <div>
+    <div class='h-64 w-64 relative before:absolute before:inset-2 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%] before:bg-gradient-to-r from-teal-700 to-cyan-800'>
+      <img class='w-full h-full rounded-[37%_63%_55%_45%/30%_41%_59%_70%] shadow-slate-700 grayscale' src="/img/profile.jfif" alt='profile' />
+    </div>
+  </div>
+</section>

@@ -35,13 +35,9 @@ const navigation = [
 <nav class="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
   <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 py-2">
     <div class="relative flex items-center justify-between">
-      <a href="#">
-        <a class={`flex items-center gap-2 text-black dark:text-white text-sm font-bold ${activeLink('/#') ? 'underline decoration-teal-600 decoration-2' : 'hover:underline hover:decoration-slate-400'}`} aria-current={activeLink('/') ? 'page' : undefined}>
-          <div class="h-9 w-9">
-            <img class="w-full h-full rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" />
-          </div>
-          Jhorman Rus
-        </a>
+      <a class="flex items-center gap-2 text-black dark:text-white text-sm font-bold hover:underline hover:decoration-slate-400" id={''} href="#" aria-current={activeLink('/') ? 'page' : undefined}>
+        <img class="w-9 h-9 rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" />
+        Jhorman Rus
       </a>
       <div class="flex-1 flex items-center justify-center sm:items-stretch">
         <div class="flex space-x-2 text-sm text-gray-400 uppercase">
