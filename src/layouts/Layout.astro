@@ -45,9 +45,40 @@ import Navbar from '../components/Navbar.astro'
 
 <style is:global>
   @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+  @font-face {
+    font-family: 'BabyBlooming';
+    src: url('/fonts/BabyBlooming.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'LittleCaudillo';
+    src: url('/fonts/LittleCaudillo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mangatha';
+    src: url('/fonts/Mangatha.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'TrueLies';
+    src: url('/fonts/TrueLies.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
   html {
     font-family: 'Karla', cursive;
-    letter-spacing: -0.05em;
     scroll-behavior: smooth;
+  }
+  h1 {
+    font-family: 'TrueLies', sans-serif;
+    letter-spacing: 0.2em;
   }
 </style>
