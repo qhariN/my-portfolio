@@ -1,5 +1,6 @@
 ---
 import { t } from 'i18next'
+import ThemeToggler from './ThemeToggler.astro'
 
 const activeLink = link => Astro.url.pathname === link
 const navigation = [
@@ -32,7 +33,7 @@ const navigation = [
 // }
 ---
 
-<nav class="sticky top-0 border-b-2 bg-white dark:bg-zinc-900 dark:border-neutral-700 z-10">
+<nav class="sticky top-0 bg-gray-100 dark:bg-zinc-900 dark:border-neutral-700 z-10">
   <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 py-2">
     <div class="relative flex items-center justify-between">
       <a class="flex items-center gap-2 text-black dark:text-white text-sm font-bold hover:underline hover:decoration-slate-400" id={''} href="#" aria-current={activeLink('/') ? 'page' : undefined}>
@@ -50,10 +51,7 @@ const navigation = [
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <!-- <button onClick={() => setDarkTheme(!darkTheme)} type="button" class="flex justify-center items-center w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700" title={`Enable ${darkTheme? 'light' : 'dark'} mode`}>
-          <span class="sr-only">Light mode</span>
-          <img class="w-5 h-5" src={`/svg/${darkTheme? 'sun' : 'moon'}.svg`} alt="light mode" />
-        </button> -->
+        <ThemeToggler />
         <!-- <Listbox value={router.locale} onChange={onLocaleChange}>
           <div class="relative">
             <Listbox.Button class="relative w-full py-1 px-2 rounded-lg border-2 dark:border-neutral-700 uppercase sm:text-sm">

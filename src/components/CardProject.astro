@@ -10,7 +10,7 @@ const repository = await fetch(`https://api.github.com/repos/${project.github_na
     <img class="w-full aspect-video object-cover" src={project.images[0]} alt="desc" draggable="false" />
   )}
   <div class:list={['flex-grow flex flex-col p-4 pt-3', { 'border-t-2 dark:border-neutral-700': project.images.length }]}>
-    <h1 class="text-md font-bold">{project.name}</h1>
+    <h3 class="text-md font-bold">{project.name}</h3>
     <p class="text-sm flex-grow">{repository?.description}</p>
     <div class="break-words space-x-2 text-xs text-gray-400">
       {repository?.topics.map(topic => (
