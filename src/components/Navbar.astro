@@ -1,5 +1,6 @@
 ---
 import { t } from 'i18next'
+import { LanguageSelector } from 'astro-i18next/components'
 import ThemeToggler from './ThemeToggler.astro'
 
 const activeLink = link => Astro.url.pathname === link
@@ -8,29 +9,6 @@ const navigation = [
   { name: t('projects'), href: 'projects', icon: 'coding.svg' },
   { name: t('aboutMe'), href: 'me', icon: 'resume.svg' }
 ]
-
-// useEffect(() => {
-//   if (darkTheme !== null) {
-//     if (darkTheme) {
-//       localStorage.theme = 'dark'
-//       document.documentElement.classList.add('dark')
-//     } else {
-//       localStorage.theme = 'light'
-//       document.documentElement.classList.remove('dark')
-//     }
-//   }
-// }, [darkTheme])
-
-// useEffect(() => {
-//   setTimeout(() => {
-//     setDarkTheme(document.documentElement.classList.contains('dark'))
-//   })
-// }, [])
-
-// const onLocaleChange = (locale: string) => {
-//   document.cookie = `NEXT_LOCALE=${locale}`
-//   router.push(router.asPath, router.asPath, { locale, scroll: false })
-// }
 ---
 
 <nav class="sticky top-0 bg-gray-100 dark:bg-zinc-900 dark:border-neutral-700 z-10">
@@ -52,6 +30,7 @@ const navigation = [
       </div>
       <div class="flex items-center gap-2">
         <ThemeToggler />
+        <LanguageSelector showFlag={true} />
         <!-- <Listbox value={router.locale} onChange={onLocaleChange}>
           <div class="relative">
             <Listbox.Button class="relative w-full py-1 px-2 rounded-lg border-2 dark:border-neutral-700 uppercase sm:text-sm">

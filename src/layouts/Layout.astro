@@ -1,10 +1,12 @@
 ---
+import i18next from 'i18next'
+import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '../components/Footer.astro'
 import Navbar from '../components/Navbar.astro'
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -31,6 +33,7 @@ import Navbar from '../components/Navbar.astro'
     <meta name="twitter:description" content="Web Developer. Passionate about software development." />
     <meta name="twitter:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
     <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
+    <HeadHrefLangs />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css">
   </head>
   <body>
