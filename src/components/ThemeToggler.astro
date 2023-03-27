@@ -27,7 +27,7 @@
     document.documentElement.classList.remove('dark')
   }
 
-  const themeCheckbox = document.getElementById('themeToggle')
+  const themeCheckbox = document.getElementById('themeToggle') as HTMLInputElement
   themeCheckbox.checked = document.documentElement.classList.contains('dark')
 
   const handleToggleClick = () => {

@@ -3,7 +3,7 @@ import { t } from 'i18next'
 import { LanguageSelector } from 'astro-i18next/components'
 import ThemeToggler from './ThemeToggler.astro'
 
-const activeLink = link => Astro.url.pathname === link
+const activeLink = (link: string) => Astro.url.pathname === link
 const navigation = [
   { name: t('articles'), href: '/blog', icon: 'article.svg' },
   { name: t('projects'), href: 'projects', icon: 'coding.svg' },
