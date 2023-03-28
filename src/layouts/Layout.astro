@@ -2,7 +2,6 @@
 import i18next from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '../components/Footer.astro'
-import Navbar from '../components/Navbar.astro'
 ---
 
 <!DOCTYPE html>
@@ -34,16 +33,13 @@ import Navbar from '../components/Navbar.astro'
     <meta name="twitter:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
     <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
     <HeadHrefLangs />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/simple.min.css">
   </head>
-  <body>
-    <div class="flex flex-col min-h-screen dark:text-white bg-gray-100 dark:bg-zinc-900">
-      <Navbar />
-      <main class="max-w-screen-md mx-auto w-full flex flex-col flex-grow px-2 py-4 sm:px-6 sm:py-8 lg:px-8 lg:py-10 bg-white dark:bg-zinc-800 rounded-3xl">
-        <slot />
-      </main>
-      <Footer />
-    </div>
+  <body class="flex flex-col min-h-screen dark:text-white dark:bg-zinc-900">
+    <main class="max-w-screen-md mx-auto w-full flex flex-col flex-grow px-2 py-4 sm:px-6 sm:py-8 lg:px-8 lg:py-10 rounded-3xl">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
@@ -56,33 +52,11 @@ import Navbar from '../components/Navbar.astro'
     font-style: normal;
     font-display: swap;
   }
-  @font-face {
-    font-family: 'LittleCaudillo';
-    src: url('/fonts/LittleCaudillo.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Mangatha';
-    src: url('/fonts/Mangatha.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'TrueLies';
-    src: url('/fonts/TrueLies.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
   html {
     font-family: 'Karla', cursive;
     scroll-behavior: smooth;
   }
   h1 {
-    font-family: 'TrueLies', sans-serif;
-    letter-spacing: 0.2em;
+    font-family: 'BabyBlooming', sans-serif;
   }
 </style>
