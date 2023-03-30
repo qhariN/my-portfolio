@@ -1,0 +1,17 @@
+---
+import { changeLanguage } from 'i18next'
+import Layout from '../../layouts/Layout.astro'
+import HeroSection from '../../components/HeroSection.astro'
+import ProjectsSection from '../../components/ProjectsSection.astro'
+import MeSection from '../../components/MeSection.astro'
+import Navbar from '../../components/Navbar.astro'
+
+changeLanguage('es')
+---
+
+<Layout>
+  <HeroSection />
+  <Navbar />
+  <ProjectsSection />
+  <MeSection />
+</Layout>
