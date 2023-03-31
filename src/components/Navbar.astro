@@ -17,10 +17,10 @@ const navigation = [
       <img class="w-9 h-9 rounded-full bg-gray-300 dark:bg-neutral-700" src="/img/logo.png" alt="Logo" />
       Jhorman Rus
     </a>
-    <ul id="navigation" class="flex items-center gap-2 text-sm text-gray-400 uppercase">
+    <ul id="navigation" class="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-bold">
       {navigation.map(item => (
         <li>
-          <a class="flex items-center gap-2 px-3 py-2" href={`#${item.href}`}>
+          <a class="flex items-center gap-2 p-4" href={`#${item.href}`}>
             <img class="w-5 h-5" src={`/svg/${item.icon}`} alt={item.name} />
             <>{item.name}</>
           </a>
@@ -56,6 +56,6 @@ const navigation = [
     @apply text-black dark:text-white underline decoration-teal-600 decoration-2;
   }
   a:hover {
-    @apply rounded-xl bg-[#B7B8C9];
+    @apply rounded-xl bg-[#DF7857]/10 text-[#DF7857];
   }
 </style>
