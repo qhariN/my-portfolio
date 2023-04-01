@@ -2,6 +2,8 @@
 import i18next from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '../components/Footer.astro'
+import HeroSection from '../components/HeroSection.astro'
+import Navbar from '../components/Navbar.astro'
 ---
 
 <!DOCTYPE html>
@@ -35,8 +37,10 @@ import Footer from '../components/Footer.astro'
     <HeadHrefLangs />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/simple.min.css">
   </head>
-  <body class="flex flex-col min-h-screen dark:text-white dark:bg-zinc-900">
-    <main class="max-w-screen-md mx-auto w-full flex flex-col flex-grow px-2 py-4 sm:px-6 sm:py-8 lg:px-8 lg:py-10 rounded-3xl">
+  <body class="flex flex-col items-center min-h-screen dark:text-white dark:bg-zinc-900">
+    <HeroSection />
+    <Navbar />
+    <main class="max-w-screen-md space-y-10 flex-grow p-2 sm:p-6 lg:p-8">
       <slot />
     </main>
     <Footer />
@@ -55,6 +59,7 @@ import Footer from '../components/Footer.astro'
   html {
     font-family: 'Karla', cursive;
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
   h1 {
     font-family: 'BabyBlooming', sans-serif;

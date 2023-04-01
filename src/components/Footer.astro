@@ -14,31 +14,29 @@ const socials = [
 ]
 ---
 
-<footer class="mt-auto">
-  <div class="flex flex-col space-y-1 max-w-screen-md mx-auto w-full px-2 sm:px-6 lg:px-8 py-2">
-    <div class="flex flex-col items-center space-y-2 pb-1">
-      <p>{t('projectMadeWith')}</p>
-      <div class="flex flex-wrap justify-center gap-4 mb-2">
-        {technologies.map(item => (
-          <div class="h-9 w-9">
-            <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
-          </div>
-        ))}
-      </div>
+<footer class="w-full max-w-screen-md space-y-1 px-2 sm:px-6 lg:px-8 py-2">
+  <div class="flex flex-col items-center space-y-2 pb-1">
+    <p>{t('projectMadeWith')}</p>
+    <div class="flex flex-wrap justify-center gap-4 mb-2">
+      {technologies.map(item => (
+        <div class="h-9 w-9">
+          <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        </div>
+      ))}
     </div>
-    <hr class="w-full border-t-2 dark:border-neutral-700" />
-    <div class="flex items-center w-full text-xs">
-      <div class="flex">
-        <span class="hidden sm:block">{t('developedWithLove')} <u>Jhorman Rus</u></span>
-        <span class="sm:hidden">{t('by')} <u>Jhorman Rus</u></span>
-      </div>
-      <div class="flex items-center gap-2 ml-auto">
-        {socials.map(item => (
-          <a class={`h-5 w-5 ${item.invert && 'dark:invert'}`} href={item.href} target="_blank" rel="noreferrer">
-            <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
-          </a>
-        ))}
-      </div>
+  </div>
+  <hr class="w-full border-t-2 dark:border-neutral-700" />
+  <div class="flex items-center w-full text-xs">
+    <div class="flex">
+      <span class="hidden sm:block">{t('developedWithLove')} <u>Jhorman Rus</u></span>
+      <span class="sm:hidden">{t('by')} <u>Jhorman Rus</u></span>
+    </div>
+    <div class="flex items-center gap-2 ml-auto">
+      {socials.map(item => (
+        <a class={`h-5 w-5 ${item.invert && 'dark:invert'}`} href={item.href} target="_blank" rel="noreferrer">
+          <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        </a>
+      ))}
     </div>
   </div>
 </footer>
