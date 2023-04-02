@@ -9,10 +9,10 @@ import { Trans } from 'astro-i18next/components'
     <p>{t('aboutMeDescription')}</p>
   </div>
   <section>
-    <ul class="list-disc marker:text-teal-600 pl-5">
+    <ul class="list-disc marker:text-coral pl-5">
       <li><b>{t('email')}</b> - jhormanrus [at] gmail [dot] com</li>
-      <li><b>LinkedIn</b> - <a href="https://linkedin.com/in/jhormanrus/" class="hover:underline decoration-2 decoration-teal-600">Jhorman Ruswel Tito Tito</a></li>
-      <li><b>Github</b> - <a href="https://github.com/jhormanrus" class="hover:underline decoration-2 decoration-teal-600">jhormanrus</a></li>
+      <li><b>LinkedIn</b> - <a href="https://linkedin.com/in/jhormanrus/" class="hover:underline decoration-2 decoration-coral">Jhorman Ruswel Tito Tito</a></li>
+      <li><b>Github</b> - <a href="https://github.com/jhormanrus" class="hover:underline decoration-2 decoration-coral">jhormanrus</a></li>
     </ul>
   </section>
   <section class="space-y-3">
@@ -21,7 +21,7 @@ import { Trans } from 'astro-i18next/components'
       <h3 class="text-lg font-bold flex">{t('frontendDeveloper')} <span class="text-gray-400 font-normal ml-auto whitespace-nowrap">{new Date(Date.UTC(2020, 3)).toLocaleString(i18next.language, { month: 'short', year: 'numeric' })} - {new Date(Date.UTC(2021, 12)).toLocaleString(i18next.language, { month: 'short', year: 'numeric' })}</span></h3>
       <p class="text-lg">ADRA PERÚ — {t('limaPeru')}</p>
     </div>
-    <ul class="list-disc marker:text-teal-600 pl-5">
+    <ul class="list-disc marker:text-coral pl-5">
       <Trans i18nKey="experienceDescription">
         <li></li>
       </Trans>
@@ -29,7 +29,7 @@ import { Trans } from 'astro-i18next/components'
   </section>
   <section class="space-y-3">
     <h2 class="text-xl font-bold border-b-2 dark:border-neutral-700">{t('skills')}</h2>
-    <ul class="list-disc marker:text-teal-600 pl-5">
+    <ul class="list-disc marker:text-coral pl-5">
       <li><b>{t('languages')}</b> - Javascript, Typescript, SQL, HTML5, CSS3, JSON</li>
       <li><b>{t('frontendTechnologies')}</b> - Angular, React, Next.js, Vue.js, npm, Bootstrap 4/5, Tailwind</li>
       <li><b>{t('backendTechnologies')}</b> - Express, NestJS, Node.js</li>
@@ -45,7 +45,7 @@ import { Trans } from 'astro-i18next/components'
   </section>
   <section class="space-y-3">
     <h2 class="text-xl font-bold border-b-2 dark:border-neutral-700">{t('languages')}</h2>
-    <ul class="list-disc marker:text-teal-600 pl-5">
+    <ul class="list-disc marker:text-coral pl-5">
       {(t('languagesList', { returnObjects: true }) as string[]).map((language, index) => (
         <li>{language}</li>
       ))}

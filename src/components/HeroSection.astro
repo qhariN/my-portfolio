@@ -8,14 +8,14 @@ const myGithub = await response.json()
 
 <header id="hero" class="max-w-screen-md flex flex-col sm:flex-row items-center gap-6 px-2 pt-4 pb-2 sm:px-6 sm:pt-8 sm:pb-4 lg:px-8 lg:pt-10 lg:pb-5">
   <div>
-    <div class='h-64 w-64 relative before:absolute before:inset-2 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%] before:bg-[#00ABB3]/30'>
+    <div class='h-64 w-64 relative before:absolute before:inset-2 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%] before:bg-navy/30'>
       <img class='w-full h-full rounded-[37%_63%_55%_45%/30%_41%_59%_70%] grayscale' src="/img/profile.jfif" alt="profile" />
     </div>
   </div>
   <div class='flex flex-col space-y-5'>
     <div class='space-y-1'>
       <h1 class='text-3xl font-semibold'>Jhorman Ruswel Tito</h1>
-      <h2 class='text-xl font-bold text-gray-400'>{t('webDeveloper')}</h2>
+      <h2 class='text-xl font-bold text-gray'>{t('webDeveloper')}</h2>
     </div>
     <div class='space-y-2'>
       <p>
@@ -24,9 +24,9 @@ const myGithub = await response.json()
       </p>
       <p>
         <Trans i18nKey="iInviteYou">
-          <a href='/blog' class='underline decoration-2 decoration-teal-600 transition-colors hover:decoration-cyan-700 font-bold' />
-          <a href='/#projects' class='underline decoration-2 decoration-teal-600 transition-colors hover:decoration-cyan-700 font-bold' />
-          <a href='/#me' class='underline decoration-2 decoration-teal-600 transition-colors hover:decoration-cyan-700 font-bold' />
+          <a href='/blog' class='hover:underline decoration-2 hover:decoration-coral font-bold' />
+          <a href='/#projects' class='hover:underline decoration-2 hover:decoration-coral font-bold' />
+          <a href='/#me' class='hover:underline decoration-2 hover:decoration-coral font-bold' />
         </Trans>
       </p>
     </div>
@@ -34,7 +34,7 @@ const myGithub = await response.json()
       <a href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
         <img class="w-5 h-5 relative" src="/svg/linkedin.svg" alt="linkedin" />
       </a>
-      <a class="text-gray-400 flex items-center gap-2 hover:underline" href={myGithub?.html_url} target="_blank" rel="noreferrer">
+      <a class="text-gray flex items-center gap-2 hover:underline" href={myGithub?.html_url} target="_blank" rel="noreferrer">
         <img class="w-5 h-5 relative dark:invert" src="/svg/github.svg" alt="github" />
         {t('followersOnGithub', { followers: myGithub?.followers })}
       </a>
