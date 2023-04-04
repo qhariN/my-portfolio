@@ -21,18 +21,18 @@ const repository = await response.json()
       ))}
     </div>
     <div class="flex gap-4 mt-2 text-sm">
-      <a class="flex items-center gap-1 hover:underline" href={'repository?.html_url'} target="_blank" rel="noreferrer">
+      <a href={'repository?.html_url'} target="_blank" rel="noreferrer">
         <img class="h-4 w-4 dark:invert" src="/svg/github.svg" alt="source" />
         {t('source')}
       </a>
       {project.demo && (
-        <a class="flex items-center gap-1 hover:underline" href={'repository?.homepage'} target="_blank" rel="noreferrer">
+        <a href={'repository?.homepage'} target="_blank" rel="noreferrer">
           <img class="h-4 w-4" src="/svg/coding.svg" alt="demo" />
           Demo
         </a>
       )}
       {project.npm && (
-        <a class="flex items-center gap-1 hover:underline" href={project.npm} target="_blank" rel="noreferrer">
+        <a href={project.npm} target="_blank" rel="noreferrer">
           <img class="h-4 w-4" src="/svg/npm.svg" alt="npm" />
           npm
         </a>
@@ -46,5 +46,11 @@ const repository = await response.json()
     @apply content-[''] w-[110%] h-full;
     @apply absolute top-0 left-[-5%];
     @apply rounded-2xl rotate-3 bg-yellow/20;
+  }
+  a {
+    @apply flex items-center gap-2 p-3;
+  }
+  a:hover {
+    @apply rounded-xl bg-coral/10 text-coral;
   }
 </style>
