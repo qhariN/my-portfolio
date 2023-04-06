@@ -11,16 +11,16 @@ const navigation = [
 ]
 ---
 
-<nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 sm:py-4 lg:px-8 lg:py-5">
+<nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 lg:px-8">
   <div class="relative flex items-center justify-between">
-    <a class="flex items-center gap-2 text-black dark:text-white text-sm font-bold" href="#" aria-current={activeLink('/') ? 'page' : undefined}>
+    <!-- <a class="text-black dark:text-white text-sm font-bold" href="#" aria-current={activeLink('/') ? 'page' : undefined}>
       <img class="w-9 h-9 rounded-full bg-gray dark:bg-neutral" src="/img/logo.png" alt="Logo" />
       Jhorman Rus
-    </a>
+    </a> -->
     <ul id="navigation" class="flex items-center gap-2 text-gray dark:text-gray font-bold">
       {navigation.map(item => (
         <li>
-          <a class="flex items-center gap-2 p-4" href={`#${item.href}`}>
+          <a href={`#${item.href}`}>
             <img class="w-5 h-5" src={`/svg/${item.icon}`} alt={item.name} />
             <>{item.name}</>
           </a>
@@ -52,10 +52,13 @@ const navigation = [
 </script>
 
 <style>
-  .active {
-    @apply text-black dark:text-white underline decoration-navy decoration-2;
+  a {
+    @apply flex items-center gap-2 p-3 rounded-xl;
+  }
+  a.active {
+    @apply bg-navy/20 text-navy;
   }
   a:hover {
-    @apply rounded-xl bg-navy/10 text-navy;
+    @apply bg-navy/10 text-navy;
   }
 </style>
