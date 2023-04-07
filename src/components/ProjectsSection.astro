@@ -15,8 +15,8 @@ import CardProject from './CardProject.astro';
     </p>
   </div>
   <div class='flex flex-col gap-4 mt-6'>
-    {projectsList.filter(project => project.visible).map(project => (
-      <CardProject project={project} />
+    {projectsList.filter(project => project.visible).map((project, i) => (
+      <CardProject project={project} reverse={i % 2 === 0} />
     ))}
   </div>
 </section>

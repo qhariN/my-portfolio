@@ -7,7 +7,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1667969851/my-repositories/nextjs-scraper-playground/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/nextjs-scraper-playground"
+    "github_name": "jhormanrus/nextjs-scraper-playground",
+    "color": "red"
   },
   {
     "npm": null,
@@ -17,7 +18,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1671306351/my-repositories/bibdle/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/bibdle"
+    "github_name": "jhormanrus/bibdle",
+    "color": "blue"
   },
   {
     "npm": null,
@@ -27,7 +29,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1679711118/my-repositories/stickerland/1.webp"
     ],
     "visible": true,
-    "github_name": "jhormanrus/Stickerland"
+    "github_name": "jhormanrus/Stickerland",
+    "color": "orchid"
   },
   {
     "npm": null,
@@ -38,7 +41,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1648782340/my-repositories/edulingo/2.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/EduLingo"
+    "github_name": "jhormanrus/EduLingo",
+    "color": "emerald"
   },
   {
     "npm": null,
@@ -48,7 +52,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1679711392/my-repositories/generate-function-name/1.webp"
     ],
     "visible": true,
-    "github_name": "jhormanrus/generateFunctionName"
+    "github_name": "jhormanrus/generateFunctionName",
+    "color": "mimosa"
   },
   {
     "npm": null,
@@ -58,7 +63,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1650001781/my-repositories/himnario-adventista/1.png"
     ],
     "visible": true,
-    "github_name": "jhormanrus/himnario-adventista-broadcast"
+    "github_name": "jhormanrus/himnario-adventista-broadcast",
+    "color": "purple"
   },
   {
     "npm": null,
@@ -68,7 +74,8 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1648790467/my-repositories/foxbel/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/Foxbel"
+    "github_name": "jhormanrus/Foxbel",
+    "color": "orange"
   },
   {
     "npm": null,
