@@ -4,11 +4,33 @@ import { LanguageSelector } from 'astro-i18next/components'
 import ThemeToggler from './ThemeToggler.astro'
 
 const activeLink = (link: string) => Astro.url.pathname === link
+
 const navigation = [
-  { name: t('articles'), href: '/blog', icon: 'article.svg' },
-  { name: t('projects'), href: 'projects', icon: 'coding.svg' },
-  { name: t('aboutMe'), href: 'me', icon: 'resume.svg' }
+  {
+    name: t('projects'),
+    href: 'projects',
+    icon: 'coding.svg',
+    color: 'emerald'
+  },
+  {
+    name: t('aboutMe'),
+    href: 'me',
+    icon: 'resume.svg',
+    color: 'orchid'
+  },
+  {
+    name: t('articles'),
+    href: '/blog',
+    icon: 'article.svg',
+    color: 'mimosa'
+  }
 ]
+
+const colorVariants: Record<string, string> = {
+  orchid: '[&.active]:text-[#AD5E99] [&.active]:bg-[#AD5E99]/10 decoration-[#AD5E99]',
+  emerald: '[&.active]:text-[#009473] [&.active]:bg-[#009473]/10 decoration-[#009473]',
+  mimosa: '[&.active]:text-mimosa [&.active]:bg-mimosa/10 decoration-mimosa'
+}
 ---
 
 <nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 lg:px-8">
@@ -20,7 +42,7 @@ const navigation = [
     <ul id="navigation" class="flex items-center gap-2 text-gray dark:text-gray font-bold">
       {navigation.map(item => (
         <li>
-          <a href={`#${item.href}`}>
+          <a class={colorVariants[item.color]} href={`#${item.href}`}>
             <img class="w-5 h-5" src={`/svg/${item.icon}`} alt={item.name} />
             <>{item.name}</>
           </a>
@@ -55,10 +77,7 @@ const navigation = [
   a {
     @apply flex items-center gap-2 p-3 rounded-xl;
   }
-  a.active {
-    @apply bg-navy/20 text-navy;
-  }
   a:hover {
-    @apply bg-navy/10 text-navy;
+    @apply hover:underline decoration-[3px];
   }
 </style>

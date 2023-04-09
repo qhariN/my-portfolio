@@ -11,7 +11,8 @@ module.exports = {
       neutral: '#404040',
       gray: '#9CA3AF',
       navy: '#00ABB3',
-      yellow: '#FFD700',
+      mimosa: '#F0C05A',
+      orange: '#E2583E',
       zinc: '#18181B'
     }
   },
