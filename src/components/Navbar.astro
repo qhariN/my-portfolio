@@ -9,21 +9,18 @@ const navigation = [
   {
     name: t('projects'),
     href: 'projects',
-    icon: 'coding.svg',
     color: 'emerald'
   },
   {
     name: t('aboutMe'),
     href: 'me',
-    icon: 'resume.svg',
     color: 'orchid'
-  },
-  {
-    name: t('articles'),
-    href: '/blog',
-    icon: 'article.svg',
-    color: 'mimosa'
   }
+  // {
+  //   name: t('articles'),
+  //   href: '/blog',
+  //   color: 'mimosa'
+  // }
 ]
 
 const colorVariants: Record<string, string> = {
@@ -43,7 +40,6 @@ const colorVariants: Record<string, string> = {
       {navigation.map(item => (
         <li>
           <a class={colorVariants[item.color]} href={`#${item.href}`}>
-            <img class="w-5 h-5" src={`/svg/${item.icon}`} alt={item.name} />
             <>{item.name}</>
           </a>
         </li>

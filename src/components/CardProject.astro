@@ -32,12 +32,10 @@ const colorVariants: Record<string, string> = {
     </ul>
     <div class="flex gap-4 mt-2 text-sm">
       <a href={'repository?.html_url'} target="_blank" rel="noreferrer">
-        <img class="h-4 w-4 dark:invert" src="/svg/github.svg" alt="source" />
         {t('source')}
       </a>
       {project.demo && (
         <a href={'repository?.homepage'} target="_blank" rel="noreferrer">
-          <img class="h-4 w-4" src="/svg/coding.svg" alt="demo" />
           Demo
         </a>
       )}

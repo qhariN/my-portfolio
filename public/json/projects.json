@@ -82,7 +82,7 @@
     "demo": true,
     "name": "My portfolio",
     "images": [],
-    "visible": true,
+    "visible": false,
     "github_name": "jhormanrus/my-portfolio"
   },
   {
@@ -90,7 +90,7 @@
     "demo": false,
     "name": "zxcvbn",
     "images": [],
-    "visible": true,
+    "visible": false,
     "github_name": "jhormanrus/zxcvbn"
   },
   {
@@ -98,7 +98,7 @@
     "demo": false,
     "name": "Himnario Adventista API",
     "images": [],
-    "visible": true,
+    "visible": false,
     "github_name": "jhormanrus/himnario-adventista-api"
   },
   {
@@ -106,7 +106,7 @@
     "demo": false,
     "name": "Biblia API",
     "images": [],
-    "visible": true,
+    "visible": false,
     "github_name": "jhormanrus/biblia-api"
   }
 ]
