@@ -6,12 +6,12 @@ const response = await fetch(`https://api.github.com/repos/${project.github_name
 const repository = await response.json()
 
 const colorVariants: Record<string, string> = {
-  red: 'after:bg-[#C74375]/20',
-  blue: 'after:bg-[#0F4C81]/20',
-  orchid: 'after:bg-[#AD5E99]/20',
-  emerald: 'after:bg-[#009473]/20',
+  red: 'after:bg-red/20',
+  blue: 'after:bg-blue/20',
+  orchid: 'after:bg-orchid/20',
+  emerald: 'after:bg-emerald/20',
   mimosa: 'after:bg-mimosa/20',
-  purple: 'after:bg-[#5A5B9F]/20',
+  purple: 'after:bg-purple/20',
   orange: 'after:bg-orange/20'
 }
 ---
