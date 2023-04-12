@@ -1,7 +1,7 @@
 ---
 import { t } from 'i18next'
-import { LanguageSelector } from 'astro-i18next/components'
 import ThemeToggler from './ThemeToggler.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
 
 const activeLink = (link: string) => Astro.url.pathname === link
 
@@ -47,7 +47,7 @@ const colorVariants: Record<string, string> = {
     </ul>
     <div class="flex items-center gap-2">
       <ThemeToggler />
-      <LanguageSelector showFlag={false} />
+      <LanguageSwitcher />
     </div>
   </div>
 </nav>
