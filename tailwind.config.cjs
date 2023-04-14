@@ -15,7 +15,7 @@ module.exports = {
       orange: '#E2583E',
       zinc: '#18181B',
       red: '#C74375',
-      blue: '#0F4C81',
+      blue: '#2b70c9',
       orchid: '#AD5E99',
       emerald: '#009473',
       purple: '#5A5B9F'

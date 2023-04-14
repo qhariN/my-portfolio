@@ -16,7 +16,7 @@ const colorVariants: Record<string, string> = {
 }
 ---
 
-<div class='flex items-center gap-10 overflow-hidden' class:list={{ 'flex-row-reverse': reverse }}>
+<div class='flex items-center gap-10' class:list={{ 'flex-row-reverse': reverse }}>
   {project.images.length > 0 && (
     <div class="img flex-1 relative m-4" class:list={[colorVariants[project.color]]}>
       <img class="w-full aspect-square object-cover rounded-2xl shadow-lg relative z-10" src={project.images[0]} alt="desc" draggable="false" />
