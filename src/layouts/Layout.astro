@@ -2,7 +2,7 @@
 import i18next from 'i18next'
 import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '../components/Footer.astro'
-import HeroSection from '../components/HeroSection.astro'
+import Header from '../components/Header.astro'
 import Navbar from '../components/Navbar.astro'
 ---
 
@@ -38,7 +38,7 @@ import Navbar from '../components/Navbar.astro'
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/simple.min.css">
   </head>
   <body class="flex flex-col items-center min-h-screen dark:text-white dark:bg-zinc">
-    <HeroSection />
+    <Header />
     <Navbar />
     <main class="max-w-screen-md space-y-10 flex-grow p-2 sm:p-6 lg:p-8">
       <slot />
