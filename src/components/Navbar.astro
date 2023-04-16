@@ -30,9 +30,11 @@ const colorVariants: Record<string, string> = {
 }
 ---
 
-<nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 lg:px-8 m-[-4rem]">
-  <div class='w-16 h-16 bg-navy'></div>
-  <div class="relative flex items-center justify-between">
+<nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 lg:px-8 mt-[-4rem]">
+  <div class='h-16 relative'>
+    <img class='absolute bottom-9 w-64 h-64 rounded-[37%_63%_55%_45%/30%_41%_59%_70%] grayscale' src="/img/profile.jfif" alt="profile" />
+  </div>
+  <div class="flex items-center justify-between">
     <!-- <a class="text-black dark:text-white text-sm font-bold" href="#" aria-current={activeLink('/') ? 'page' : undefined}>
       <img class="w-9 h-9 rounded-full bg-gray dark:bg-neutral" src="/img/logo.png" alt="Logo" />
       Jhorman Rus
