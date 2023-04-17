@@ -31,8 +31,10 @@ const colorVariants: Record<string, string> = {
 ---
 
 <nav class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 px-2 py-4 sm:px-6 lg:px-8 mt-[-4rem]">
-  <div class='h-16 relative'>
-    <img class='absolute bottom-9 w-64 h-64 rounded-[37%_63%_55%_45%/30%_41%_59%_70%] grayscale' src="/img/profile.jfif" alt="profile" />
+  <div class='w-16 h-16 relative'>
+    <div class="absolute bottom-9 w-64 h-64" style={{ transform: 'var(--avatar-image-transform)' }}>
+      <img class='w-full h-full rounded-[37%_63%_55%_45%/30%_41%_59%_70%] grayscale' src="/img/profile.jfif" alt="profile" />
+    </div>
   </div>
   <div class="flex items-center justify-between">
     <!-- <a class="text-black dark:text-white text-sm font-bold" href="#" aria-current={activeLink('/') ? 'page' : undefined}>
@@ -70,6 +72,36 @@ const colorVariants: Record<string, string> = {
       }
     }
   })
+
+  window.addEventListener('scroll', function () {
+    const fromScale = 1
+    const toScale = 36 / 64
+    const fromX = 0
+    const toX = 2 / 16
+
+    const scrollY = 116 - window.scrollY
+
+    let scale = (scrollY * (fromScale - toScale)) / 116 + toScale
+    scale = clamp(scale, fromScale, toScale)
+
+    let x = (scrollY * (fromX - toX)) / 116 + toX
+    x = clamp(x, fromX, toX)
+
+    setProperty(
+      '--avatar-image-transform',
+      `translate3d(${x}rem, 0, 0) scale(${scale})`
+    )
+  }, { passive: true })
+
+  function clamp(number, a, b) {
+    const min = Math.min(a, b)
+    const max = Math.max(a, b)
+    return Math.min(Math.max(number, min), max)
+  }
+
+  function setProperty(property, value) {
+    document.documentElement.style.setProperty(property, value)
+  }
 </script>
 
 <style>
