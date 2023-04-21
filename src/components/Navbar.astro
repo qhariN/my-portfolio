@@ -33,8 +33,8 @@ const colorVariants: Record<string, string> = {
 <nav id="navbar" class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 space-y-3 px-2 py-4 sm:px-6 lg:px-8 mt-[-3.75rem]">
   <div class='w-12 h-12 relative'>
     <div class="absolute origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
-      <div class="relative before:absolute before:inset-px before:bg-purple/20 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%]">
-        <img class='w-full h-full rounded-[37%_63%_55%_45%/30%_41%_59%_70%] grayscale' src="/img/profile.jfif" alt="profile" />
+      <div class="relative before:absolute before:inset-0 before:bg-purple/20 before:dark:bg-purple/30 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%]">
+        <img class='w-full h-full rounded-full grayscale' src="/img/profile.webp" alt="profile" />
       </div>
     </div>
   </div>
@@ -62,9 +62,12 @@ const colorVariants: Record<string, string> = {
 <script>
   const downDelay = document.getElementById('navbar')?.offsetTop ?? 0
 
-  window.requestAnimationFrame(updateAvatarTransform)
+  updateAvatarTransform()
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', updateAvatarTransform, { passive: true })
+  window.addEventListener('scroll', updateActiveNavigation, { passive: true })
+
+  function updateActiveNavigation () {
     const navigation = document.getElementById('navigation')
     const fragments = document.querySelectorAll('section[id]')
     for (let i = 0; i < fragments.length; i++) {
@@ -77,7 +80,7 @@ const colorVariants: Record<string, string> = {
         link.classList.remove('active')
       }
     }
-  })
+  }
 
   function updateAvatarTransform () {
     const fromScale = 5.3333
@@ -97,8 +100,6 @@ const colorVariants: Record<string, string> = {
       '--avatar-image-transform',
       `translate3d(0, ${y}rem, 0) scale(${scale})`
     )
-
-    window.requestAnimationFrame(updateAvatarTransform)
   }
 
   function clamp (number, a, b) {
