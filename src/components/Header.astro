@@ -7,25 +7,19 @@ const myGithub = await response.json()
 ---
 
 <header id="hero" class="max-w-screen-md flex flex-col sm:flex-row items-center gap-14 z-30 px-2 pt-4 pb-2 sm:px-6 sm:pt-8 sm:pb-4 lg:px-8 lg:pt-10 lg:pb-5">
-  <div class="h-64 w-64 flex-shrink-0"></div>
-  <div class='flex flex-col space-y-5'>
-    <div class='space-y-1'>
-      <h1 class='text-3xl font-semibold'>Jhorman Ruswel Tito</h1>
-      <h2 class='text-xl font-bold text-gray'>{t('webDeveloper')}</h2>
+  <div class="w-48 h-48 flex-shrink-0"></div>
+  <div class='flex flex-col gap-3'>
+    <div>
+      <h1 class='text-2xl font-semibold'>{t('hiIm')} Jhorman</h1>
+      <h2 class='text-lg font-bold text-gray'>{t('webDeveloper')}</h2>
     </div>
-    <div class='space-y-2'>
-      <p>
-        {t('myDescription')}
-        <!-- <b><Typewriter words={t('iLike', { returnObjects: true })} typeSpeed={40} deleteSpeed={20} loop={false} cursorStyle={'_'} cursor={true} /></b> -->
-      </p>
-      <p>
-        <Trans i18nKey="iInviteYou">
-          <a href='/blog' class='hover:underline decoration-2 hover:decoration-navy font-bold' />
-          <a href='/#projects' class='hover:underline decoration-2 hover:decoration-navy font-bold' />
-          <a href='/#me' class='hover:underline decoration-2 hover:decoration-navy font-bold' />
-        </Trans>
-      </p>
-    </div>
+    <p class="mb-1">
+      {t('welcome')}<br />
+      <Trans i18nKey="myDescription">
+        <a href='/#projects' class='hover:underline decoration-2 hover:decoration-navy font-bold' />
+        <a href='/#blog' class='hover:underline decoration-2 hover:decoration-navy font-bold' />
+      </Trans>
+    </p>
     <div class='flex gap-4 items-center'>
       <a href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
         <img class="w-5 h-5 relative" src="/svg/linkedin.svg" alt="linkedin" />
