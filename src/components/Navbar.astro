@@ -60,6 +60,8 @@ const colorVariants: Record<string, string> = {
 </nav>
 
 <script>
+  const html = document.querySelector('html')
+  const navigation = document.getElementById('navigation')
   const downDelay = document.getElementById('navbar')?.offsetTop ?? 0
 
   updateAvatarTransform()
@@ -68,18 +70,18 @@ const colorVariants: Record<string, string> = {
   window.addEventListener('scroll', updateActiveNavigation, { passive: true })
 
   function updateActiveNavigation () {
-    const navigation = document.getElementById('navigation')
     const fragments = document.querySelectorAll('section[id]')
-    for (let i = 0; i < fragments.length; i++) {
-      const fragment = fragments[i]
-      const link = navigation.getElementsByTagName('a')[i]
+    fragments.forEach((fragment, i) => {
+      const link = navigation?.getElementsByTagName('a')[i]
       const rect = fragment.getBoundingClientRect()
-      if (rect.top <= 0 && rect.bottom > 0) {
-        link.classList.add('active')
+      const scrollPaddingTop = parseInt(window.getComputedStyle(html).scrollPaddingTop)
+      const fragmentSpaceTop = parseInt(window.getComputedStyle(fragment).marginTop)
+      if (rect.top <= scrollPaddingTop && rect.bottom > (scrollPaddingTop - fragmentSpaceTop)) {
+        link?.classList.add('active')
       } else {
-        link.classList.remove('active')
+        link?.classList.remove('active')
       }
-    }
+    })
   }
 
   function updateAvatarTransform () {
