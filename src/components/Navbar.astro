@@ -3,46 +3,40 @@ import { t } from 'i18next'
 import ThemeToggler from './ThemeToggler.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 
-const activeLink = (link: string) => Astro.url.pathname === link
-
 const navigation = [
   {
     name: t('projects'),
     href: 'projects',
-    color: 'emerald'
+    color: 'mimosa'
   },
   {
     name: t('aboutMe'),
     href: 'me',
     color: 'orchid'
+  },
+  {
+    name: t('articles'),
+    href: 'article',
+    color: 'emerald'
   }
-  // {
-  //   name: t('articles'),
-  //   href: '/blog',
-  //   color: 'mimosa'
-  // }
 ]
 
 const colorVariants: Record<string, string> = {
-  orchid: '[&.active]:text-orchid [&.active]:bg-orchid/10 decoration-orchid',
-  emerald: '[&.active]:text-emerald [&.active]:bg-emerald/10 decoration-emerald',
-  mimosa: '[&.active]:text-mimosa [&.active]:bg-mimosa/10 decoration-mimosa'
+  orchid: 'bg-orchid/10 text-orchid hover:bg-orchid/20 decoration-orchid [&.active]:text-orchid',
+  emerald: 'bg-emerald/10 text-emerald hover:bg-emerald/20 decoration-emerald [&.active]:text-emerald',
+  mimosa: 'bg-mimosa/10 text-mimosa hover:bg-mimosa/20 decoration-mimosa [&.active]:text-mimosa'
 }
 ---
 
 <nav id="navbar" class="w-full max-w-screen-md sticky top-0 bg-white dark:bg-zinc z-20 space-y-3 px-2 py-4 sm:px-6 lg:px-8 mt-[-4rem]">
   <div class='w-12 h-12 relative'>
     <div class="absolute origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
-      <div class="relative before:absolute before:inset-0 before:bg-purple/20 before:dark:bg-purple/30 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%]">
+      <a href="#" class="relative before:absolute before:inset-0 before:bg-purple/20 before:dark:bg-purple/30 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%]">
         <img class='w-full h-full rounded-full grayscale' src="/img/profile.webp" alt="profile" />
-      </div>
+      </a>
     </div>
   </div>
   <div class="flex items-center justify-between">
-    <!-- <a class="text-black dark:text-white text-sm font-bold" href="#" aria-current={activeLink('/') ? 'page' : undefined}>
-      <img class="w-9 h-9 rounded-full bg-gray dark:bg-neutral" src="/img/logo.png" alt="Logo" />
-      Jhorman Rus
-    </a> -->
     <ul id="navigation" class="flex items-center gap-2 text-gray dark:text-gray font-bold">
       {navigation.map(item => (
         <li>
@@ -71,12 +65,13 @@ const colorVariants: Record<string, string> = {
 
   function updateActiveNavigation () {
     const fragments = document.querySelectorAll('section[id]')
+    const scrollPaddingTop = parseInt(window.getComputedStyle(html).scrollPaddingTop)
+    const spaceBetween = 40
+
     fragments.forEach((fragment, i) => {
       const link = navigation?.getElementsByTagName('a')[i]
       const rect = fragment.getBoundingClientRect()
-      const scrollPaddingTop = parseInt(window.getComputedStyle(html).scrollPaddingTop)
-      const fragmentSpaceTop = parseInt(window.getComputedStyle(fragment).marginTop)
-      if (rect.top <= scrollPaddingTop && rect.bottom > (scrollPaddingTop - fragmentSpaceTop)) {
+      if (rect.top <= scrollPaddingTop && rect.bottom > (scrollPaddingTop - spaceBetween)) {
         link?.classList.add('active')
       } else {
         link?.classList.remove('active')
@@ -116,10 +111,10 @@ const colorVariants: Record<string, string> = {
 </script>
 
 <style>
-  a {
+  #navigation a {
     @apply flex items-center gap-2 p-3 rounded-xl;
   }
-  a:hover {
-    @apply hover:underline decoration-[3px];
+  #navigation a.active {
+    @apply underline underline-offset-[3px] decoration-[3px];
   }
 </style>
