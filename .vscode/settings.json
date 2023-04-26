@@ -2,5 +2,8 @@
   "eslint.validate": [
     "javascript",
     "astro"
-  ]
+  ],
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
 }
