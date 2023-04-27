@@ -1,3 +1,13 @@
+---
+import { localizePath } from 'astro-i18next'
+import i18next from 'i18next'
+import iso6991 from 'iso-639-1'
+
+const supportedLanguages = i18next.languages
+const currentLanguage = i18next.language
+const { pathname } = Astro.url
+---
+
 <div class="relative inline-block text-left">
   <button id="menu-button" class="theme-toggle w-12 h-12 rounded-xl text-blue bg-blue/20 dark:bg-blue/10 hover:bg-blue/30 dark:hover:bg-blue/20 p-3" type="button" title="Toggle theme">
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
@@ -5,15 +15,19 @@
     </svg>
   </button>
 
-  <div id="dropdown-menu" class="leaving ease-in-out duration-150 absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-    <div class="py-1" role="none">
-      <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
-      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
-      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
-      <form method="POST" action="#" role="none">
-        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-      </form>
+  <div id="dropdown-menu" class="leaving ease-in-out duration-150 absolute right-0 z-10 mt-2 w-24 origin-top-right rounded-xl bg-white dark:bg-zinc shadow-lg ring-1 ring-black dark:ring-neutral ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="p-1" role="none">
+      {
+        supportedLanguages.map(language => {
+          const value = localizePath(pathname, language)
+          const nativeName = iso6991.getNativeName(language)
+          return (
+            <a href={value} class="block px-4 py-2 text-sm" class:list={{ active: language === currentLanguage }} role="menuitem" tabindex="-1">
+              {nativeName}
+            </a>
+          )
+        })
+      }
     </div>
   </div>
 </div>
@@ -24,6 +38,12 @@
   }
   .leaving {
     @apply opacity-0 scale-95 invisible;
+  }
+  .active {
+    @apply bg-purple/5 dark:bg-purple/30 rounded-lg;
+  }
+  a:hover {
+    @apply bg-purple/10 dark:bg-purple/40 rounded-lg;
   }
 </style>
 
