@@ -2,6 +2,7 @@
 import { t } from 'i18next'
 import ThemeToggler from './ThemeToggler.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
+import Divider from './Divider.astro'
 
 const navigation = [
   {
@@ -53,7 +54,7 @@ const colorVariants: Record<string, string> = {
       </div>
     </div>
   </div>
-  <hr class="border-0 h-[2px] bg-gradient-to-r from-transparent via-gray/20">
+  <Divider />
 </nav>
 
 <script>
