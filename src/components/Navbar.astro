@@ -63,9 +63,15 @@ const colorVariants: Record<string, string> = {
   const downDelay = document.getElementById('navbar')?.offsetTop ?? 0
 
   updateAvatarTransform()
+  updateTitleOpacity()
 
-  window.addEventListener('scroll', updateAvatarTransform, { passive: true })
-  window.addEventListener('scroll', updateActiveNavigation, { passive: true })
+  window.addEventListener('scroll', handleScrollEvents, { passive: true })
+
+  function handleScrollEvents () {
+    updateActiveNavigation()
+    updateAvatarTransform()
+    updateTitleOpacity()
+  }
 
   function updateActiveNavigation () {
     const fragments = document.querySelectorAll('section[id]')
@@ -97,10 +103,17 @@ const colorVariants: Record<string, string> = {
     let y = (scrollY * (fromY - toY)) / downDelay + toY
     y = clamp(y, fromY, toY)
 
-    setProperty(
-      '--avatar-image-transform',
-      `translate3d(0, ${y}rem, 0) scale(${scale})`
-    )
+    setProperty('--avatar-image-transform', `translate3d(0, ${y}rem, 0) scale(${scale})`)
+  }
+
+  function updateTitleOpacity () {
+    const fromOpacity = 1
+    const toOpacity = 0
+
+    let opacity = (scrollY * (fromOpacity - toOpacity)) / downDelay + toOpacity
+    opacity = clamp(opacity, fromOpacity, toOpacity)
+
+    setProperty('--title-opacity', opacity)
   }
 
   function clamp (number, a, b) {
