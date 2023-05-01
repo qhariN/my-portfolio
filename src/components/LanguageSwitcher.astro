@@ -15,7 +15,7 @@ const { pathname } = Astro.url
     </svg>
   </button>
 
-  <div id="dropdown-menu" class="leaving ease-in-out duration-150 absolute right-0 z-10 mt-2 w-24 origin-top-right rounded-xl bg-white dark:bg-zinc shadow-lg ring-1 ring-black dark:ring-neutral ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+  <div id="dropdown-menu" class="leaving ease-in-out duration-150 absolute right-0 z-10 mt-2 w-24 origin-top-right rounded-xl bg-white dark:bg-zinc shadow-lg ring-1 ring-black dark:ring-neutral ring-opacity-5 outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
     <div class="p-1" role="none">
       {
         supportedLanguages.map(language => {
@@ -57,5 +57,13 @@ const { pathname } = Astro.url
 
     dropdownMenu?.classList.toggle('leaving')
     dropdownMenu?.classList.toggle('entering')
+  })
+
+  document.addEventListener('click', (e) => {
+    if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      menuButton.setAttribute('aria-expanded', 'false')
+      dropdownMenu?.classList.add('leaving')
+      dropdownMenu?.classList.remove('entering')
+    }
   })
 </script>
