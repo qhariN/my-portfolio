@@ -1,6 +1,4 @@
-<label class="theme-toggle w-12 h-12 rounded-xl text-mimosa dark:text-casper bg-mimosa/20 dark:bg-casper/10 hover:bg-mimosa/30 dark:hover:bg-casper/20 p-3" title="Toggle theme">
-  <input id="themeToggle" type="checkbox" />
-  <span class="theme-toggle-sr">Toggle theme</span>
+<button id="themeToggler" class="theme-toggle w-12 h-12 rounded-xl text-mimosa dark:text-casper bg-mimosa/20 dark:bg-casper/10 hover:bg-mimosa/30 dark:hover:bg-casper/20 p-3" type="button" title="Toggle theme" aria-label="Toggle theme">
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="theme-toggle__simple" viewBox="0 0 32 32">
     <clipPath id="a">
       <path d="M0-5h55v37H0zM32 7a1 1 0 0 0 25 0 1 1 0 0 0-25 0"/>
@@ -9,28 +7,30 @@
       <circle cx="16" cy="16" r="15"/>
     </g>
   </svg>
-</label>
+</button>
 
 <script>
+  const themeToggler = document.getElementById('themeToggler')
+
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
+    themeToggler?.classList.add('theme-toggle--toggled')
   } else {
     document.documentElement.classList.remove('dark')
   }
 
-  const themeCheckbox = document.getElementById('themeToggle') as HTMLInputElement
-  themeCheckbox.checked = document.documentElement.classList.contains('dark')
+  themeToggler?.addEventListener('click', toggleTheme)
 
-  const handleToggleClick = () => {
-    const darkMode = themeCheckbox.checked
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
+  function toggleTheme () {
+    const isDarkMode = document.documentElement.classList.contains('dark')
+
+    if (isDarkMode) {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
     }
+    themeToggler?.classList.toggle('theme-toggle--toggled')
   }
-
-  themeCheckbox.addEventListener('change', handleToggleClick)
 </script>
