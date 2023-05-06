@@ -13,7 +13,7 @@
   "frontendDeveloper": "FrontEnd Developer",
   "hiIm": "Hi, I'm",
   "welcome": "Welcome to my little corner of the internet.",
-  "myDescription": "Here you will find my open-source <0>$t(projects)</0> and technical <0>$t(articles)</0> as a result of my learning and experience.",
+  "myDescription": "Here you will find my <0>$t(projects)</0> and <1>$t(articles)</1> as a result of my learning and experience.",
   "followersOnGithub": "{{followers}} followers on Github",
   "noArticles": "No articles yet",
   "source": "Source",

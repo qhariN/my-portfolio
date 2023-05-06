@@ -13,7 +13,7 @@
   "frontendDeveloper": "Desarrollador Frontend",
   "hiIm": "Hola, soy",
   "welcome": "Bienvenido a mi pequeño rincón de la internet.",
-  "myDescription": "Aquí encontraras mis <0>$t(projects)</0> de código abierto y <0>$t(articles)</0> técnicos como fruto de mi aprendizaje y experiencia.",
+  "myDescription": "Aquí encontraras mis <0>$t(projects)</0> y <1>$t(articles)</1> como fruto de mi aprendizaje y experiencia.",
   "followersOnGithub": "{{followers}} seguidores en GitHub",
   "noArticles": "Aún no hay artículos",
   "source": "Código",

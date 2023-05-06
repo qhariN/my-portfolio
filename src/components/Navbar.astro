@@ -32,11 +32,9 @@ const colorVariants: Record<string, string> = {
 <nav id="navbar" class="w-full sticky top-0 bg-white/90 dark:bg-zinc/80 backdrop-blur-lg z-20 mt-[-4rem]">
   <div class="max-w-screen-md space-y-4 mx-auto px-2 py-4 sm:px-6 lg:px-8">
     <a href="#" class="flex items-center gap-4">
-      <div class='w-12 h-12 relative'>
-        <div class="absolute origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
-          <div class="relative before:absolute before:inset-0 before:bg-purple/20 before:dark:bg-purple/30 before:rounded-[59%_41%_81%_19%/70%_22%_78%_30%]">
-            <img class='w-full h-full rounded-full grayscale' src="/img/profile.webp" alt="profile" />
-          </div>
+      <div class='w-12 h-12'>
+        <div class="origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
+          <img class='w-full h-full rounded-full grayscale' src="/img/profile.webp" alt="profile" />
         </div>
       </div>
       <div class="flex flex-col font-semibold" style={{ opacity: 'var(--title-opacity)' }}>
@@ -96,9 +94,9 @@ const colorVariants: Record<string, string> = {
   }
 
   function updateAvatarTransform () {
-    const fromScale = 4
+    const fromScale = 1.33
     const toScale = 1
-    const fromY = -1.25
+    const fromY = -1.25 + -4.5 + -0.75 // pt navbar, height description, pt description
     const toY = 0
 
     const scrollY = downDelay - window.scrollY
