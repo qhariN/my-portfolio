@@ -17,7 +17,7 @@ const socials = [
 
 <footer class="w-full">
   <Divider />
-  <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 flex flex-col items-center space-y-2 pt-2 pb-3">
+  <div class="max-w-screen-md mx-auto px-5 sm:px-6 lg:px-8 flex flex-col items-center space-y-2 pt-3 pb-4">
     <p>{t('projectMadeWith')}</p>
     <div class="flex flex-wrap justify-center gap-4 mb-2">
       {technologies.map(item => (
@@ -28,12 +28,11 @@ const socials = [
     </div>
   </div>
   <Divider />
-  <div class="max-w-screen-md mx-auto px-2 sm:px-6 lg:px-8 flex items-center w-full text-xs py-2">
+  <div class="max-w-screen-md mx-auto px-5 sm:px-6 lg:px-8 flex items-center w-full text-xs py-3">
     <div class="flex">
-      <span class="hidden sm:block">{t('developedWithLove')} <u>Jhorman Rus</u></span>
-      <span class="sm:hidden">{t('by')} <u>Jhorman Rus</u></span>
+      <span>{t('developedWithLove')} <u>Jhorman Rus</u></span>
     </div>
-    <div class="flex items-center gap-2 ml-auto">
+    <div class="flex items-center gap-3 ml-auto">
       {socials.map(item => (
         <a class={`h-5 w-5 ${item.invert && 'dark:invert'}`} href={item.href} target="_blank" rel="noreferrer">
           <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />

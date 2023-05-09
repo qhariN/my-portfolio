@@ -14,12 +14,12 @@ const navigation = [
     name: t('aboutMe'),
     href: 'me',
     color: 'orchid'
-  },
-  {
-    name: t('articles'),
-    href: 'article',
-    color: 'emerald'
   }
+  // {
+  //   name: t('articles'),
+  //   href: 'article',
+  //   color: 'emerald'
+  // }
 ]
 
 const colorVariants: Record<string, string> = {
@@ -31,7 +31,7 @@ const colorVariants: Record<string, string> = {
 
 <div id="ghost" class="mt-[-4rem]"></div>
 <nav class="w-full sticky top-0 bg-white/90 dark:bg-zinc/80 backdrop-blur-lg">
-  <div class="max-w-screen-md space-y-4 mx-auto px-2 py-4 sm:px-6 lg:px-8">
+  <div class="max-w-screen-md space-y-4 mx-auto px-5 py-4 sm:px-6 lg:px-8">
     <a href="#" class="flex items-center gap-4">
       <div class='w-12 h-12'>
         <div class="origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
@@ -63,14 +63,14 @@ const colorVariants: Record<string, string> = {
 </nav>
 
 <script>
-  const html = document.querySelector('html')
+  const html = document.querySelector('html') as HTMLElement
   const navigation = document.getElementById('navigation')
-  const downDelay = document.getElementById('ghost')?.offsetTop ?? 0
 
   updateAvatarTransform()
   updateTitleOpacity()
 
   window.addEventListener('scroll', handleScrollEvents, { passive: true })
+  window.addEventListener("resize", handleScrollEvents, { passive: true })
 
   function handleScrollEvents () {
     updateActiveNavigation()
@@ -95,9 +95,14 @@ const colorVariants: Record<string, string> = {
   }
 
   function updateAvatarTransform () {
+    const downDelay = (document.getElementById('ghost') as HTMLElement).offsetTop ?? 0
+    const heroPaddingBottom = getElementComputedStyle('hero', 'padding-bottom')
+    const descriptionHeight = getElementComputedStyle('header-description', 'height')
+    const descriptionMarginTop = getElementComputedStyle('header-description', 'margin-top')
+
     const fromScale = 1.33
     const toScale = 1
-    const fromY = -1 + -4.5 + -0.75 // pt navbar, height description, pt description
+    const fromY = -(heroPaddingBottom + descriptionHeight + descriptionMarginTop)
     const toY = 0
 
     const scrollY = downDelay - window.scrollY
@@ -112,29 +117,42 @@ const colorVariants: Record<string, string> = {
   }
 
   function updateTitleOpacity () {
+    const downDelay = (document.getElementById('ghost') as HTMLElement).offsetTop ?? 0
+
     const fromOpacity = 1
     const toOpacity = 0
 
     let opacity = (scrollY * (fromOpacity - toOpacity)) / downDelay + toOpacity
     opacity = clamp(opacity, fromOpacity, toOpacity)
 
-    setProperty('--title-opacity', opacity)
+    setProperty('--title-opacity', opacity.toString())
   }
 
-  function clamp (number, a, b) {
+  function clamp (number: number, a: number, b: number) {
     const min = Math.min(a, b)
     const max = Math.max(a, b)
     return Math.min(Math.max(number, min), max)
   }
 
-  function setProperty (property, value) {
+  function setProperty (property: string, value: string) {
     document.documentElement.style.setProperty(property, value)
+  }
+
+  function getElementComputedStyle (id: string, property: string) {
+    const element = document.getElementById(id) as HTMLElement
+    const computedStyle = getComputedStyle(element)
+    const value = computedStyle.getPropertyValue(property)
+
+    const pixelsValue = parseFloat(value)
+    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const remValue = pixelsValue / rootFontSize
+    return remValue
   }
 </script>
 
 <style>
   #navigation a {
-    @apply flex items-center gap-2 p-3 rounded-xl;
+    @apply flex items-center gap-2 p-3 capitalize rounded-xl;
   }
   #navigation a.active {
     @apply underline underline-offset-[3px] decoration-[3px];
