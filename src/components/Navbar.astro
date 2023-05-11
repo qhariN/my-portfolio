@@ -23,14 +23,14 @@ const navigation = [
 ]
 
 const colorVariants: Record<string, string> = {
-  orchid: 'bg-orchid/10 text-orchid hover:bg-orchid/20 decoration-orchid [&.active]:text-orchid',
-  emerald: 'bg-emerald/10 text-emerald hover:bg-emerald/20 decoration-emerald [&.active]:text-emerald',
-  mimosa: 'bg-mimosa/10 text-mimosa hover:bg-mimosa/20 decoration-mimosa [&.active]:text-mimosa'
+  orchid: 'text-orchid bg-orchid/20 hover:bg-orchid/30 border-orchid/20 decoration-orchid shadow-lg shadow-orchid/10',
+  emerald: 'text-emerald bg-emerald/20 hover:bg-emerald/30 border-emerald/20 decoration-emerald shadow-lg shadow-emerald/10',
+  mimosa: 'text-mimosa bg-mimosa/20 hover:bg-mimosa/30 border-mimosa/20 decoration-mimosa shadow-lg shadow-mimosa/10'
 }
 ---
 
 <div id="ghost" class="mt-[-4rem]"></div>
-<nav class="w-full sticky top-0 bg-white/90 dark:bg-zinc/80 backdrop-blur-lg">
+<nav class="w-full sticky top-0 bg-white/20 dark:bg-zinc/30 backdrop-blur">
   <div class="max-w-screen-md space-y-4 mx-auto px-5 py-4 sm:px-6 lg:px-8">
     <a href="#" class="flex items-center gap-4">
       <div class='w-12 h-12'>
@@ -44,7 +44,7 @@ const colorVariants: Record<string, string> = {
       </div>
     </a>
     <div class="flex items-center justify-between">
-      <ul id="navigation" class="flex items-center gap-2 text-gray dark:text-gray font-bold">
+      <ul id="navigation" class="flex items-center gap-2 text-sm text-gray dark:text-gray font-bold">
         {navigation.map(item => (
           <li>
             <a class={colorVariants[item.color]} href={`#${item.href}`}>
@@ -152,7 +152,7 @@ const colorVariants: Record<string, string> = {
 
 <style>
   #navigation a {
-    @apply flex items-center gap-2 p-3 capitalize rounded-xl;
+    @apply flex items-center gap-2 p-3 capitalize rounded-2xl border-b;
   }
   #navigation a.active {
     @apply underline underline-offset-[3px] decoration-[3px];

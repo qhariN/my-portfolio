@@ -13,7 +13,7 @@ module.exports = {
       navy: '#00ABB3',
       mimosa: '#F0C05A',
       orange: '#E2583E',
-      zinc: '#18181B',
+      zinc: '#080808',
       red: '#C74375',
       blue: '#2B70C9',
       orchid: '#AD5E99',

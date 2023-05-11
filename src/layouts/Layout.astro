@@ -35,16 +35,16 @@ import Navbar from '../components/Navbar.astro'
     <meta name="twitter:image" content="https://res.cloudinary.com/jhormanrus/image/upload/v1652742388/banner-dark.jpg" />
     <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
     <HeadHrefLangs />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/simple.min.css">
+    <link rel="stylesheet" href="/styles/theme-toggler.css" />
   </head>
   <body class="flex flex-col items-center min-h-screen dark:text-white dark:bg-zinc relative">
+    <div class="xd fixed inset-0"></div>
     <Header />
     <Navbar />
     <main class="max-w-screen-md space-y-10 flex-grow p-5 py-6 sm:p-6 lg:p-8">
       <slot />
     </main>
     <Footer />
-    <div class="xd fixed inset-0"></div>
   </body>
 </html>
 
@@ -64,7 +64,7 @@ import Navbar from '../components/Navbar.astro'
   }
   .xd {
     z-index: -1;
-    background-image: radial-gradient(at 44% 0%,rgba(255,184,122,.4) 0px,transparent 50%),radial-gradient(at 80% 0%,rgba(31,221,255,.1) 0px,transparent 50%),radial-gradient(at 80% 50%,rgba(255,133,173,.1) 0px,transparent 50%),radial-gradient(at 0% 100%,rgba(255,181,138,0) 0px,transparent 50%),radial-gradient(at 80% 100%,rgba(107,102,255,0) 0px,transparent 50%),radial-gradient(at 0% 0%,rgba(255,133,167,.25) 0px,transparent 50%);
+    background-image: radial-gradient(at 44% 0%,rgba(255,184,122,.05) 0px,transparent 50%),radial-gradient(at 80% 0%,rgba(31,221,255,.1) 0px,transparent 50%),radial-gradient(at 80% 50%,rgba(255,133,173,.05) 0px,transparent 50%),radial-gradient(at 0% 100%,rgba(255,181,138,0.05) 0px,transparent 50%),radial-gradient(at 80% 100%,rgba(107,102,255,0.05) 0px,transparent 50%),radial-gradient(at 0% 0%,rgba(255,133,167,.15) 0px,transparent 50%);
   }
   html.dark {
     color-scheme: dark;

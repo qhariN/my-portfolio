@@ -6,20 +6,20 @@ const response = await fetch(`https://api.github.com/repos/${project.github_name
 const repository = await response.json()
 
 const colorVariants: Record<string, string> = {
-  red: 'before:bg-red/20',
-  blue: 'before:bg-blue/20',
-  orchid: 'before:bg-orchid/20',
-  emerald: 'before:bg-emerald/20',
-  mimosa: 'before:bg-mimosa/20',
-  purple: 'before:bg-purple/20',
-  orange: 'before:bg-orange/20'
+  red: 'before:bg-red/10 before:border-red/10',
+  blue: 'before:bg-blue/10 before:border-blue/10',
+  orchid: 'before:bg-orchid/10 before:border-orchid/10',
+  emerald: 'before:bg-emerald/10 before:border-emerald/10',
+  mimosa: 'before:bg-mimosa/10 before:border-mimosa/10',
+  purple: 'before:bg-purple/10 before:border-purple/10',
+  orange: 'before:bg-orange/10 before:border-orange/10'
 }
 ---
 
 <div class='flex items-center gap-10' class:list={{ 'flex-row-reverse': reverse }}>
   {project.images.length > 0 && (
     <div class="img flex-1 relative m-4 z-[-1]" class:list={[colorVariants[project.color]]}>
-      <img class="w-full aspect-square object-cover rounded-2xl shadow-lg" src={project.images[0]} alt="desc" draggable="false" />
+      <img class="w-full aspect-square object-cover rounded-3xl shadow-lg rotate-[-1deg]" src={project.images[0]} alt="desc" draggable="false" />
     </div>
   )}
   <div class='flex-1 flex flex-col'>
@@ -53,7 +53,7 @@ const colorVariants: Record<string, string> = {
   .img::before {
     @apply content-[''] w-[110%] h-full;
     @apply absolute inset-x-[-5%] z-[-1];
-    @apply rounded-2xl rotate-3;
+    @apply rounded-3xl rotate-3 border-b;
   }
   a {
     @apply flex items-center gap-2 p-3;
