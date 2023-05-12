@@ -36,12 +36,15 @@ import Navbar from '../components/Navbar.astro'
     <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
     <HeadHrefLangs />
     <link rel="stylesheet" href="/styles/theme-toggler.css" />
+    <script>
+      import '@master/css'
+    </script>
   </head>
-  <body class="flex flex-col items-center min-h-screen dark:text-white dark:bg-zinc relative">
-    <div class="xd fixed inset-0"></div>
+  <body class="flex flex:col ai:center min-h:100vh font:white@dark bg:zinc@dark rel">
+    <div class="xd fixed inset:0"></div>
     <Header />
     <Navbar />
-    <main class="max-w-screen-md space-y-10 flex-grow p-5 py-6 sm:p-6 lg:p-8">
+    <main class="max-w:sm space-y-10 flex-grow:1 p:20 py:24 p:24@xs p:32@md">
       <slot />
     </main>
     <Footer />
