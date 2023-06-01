@@ -14,12 +14,12 @@ const navigation = [
     name: t('aboutMe'),
     href: 'me',
     color: 'orchid'
+  },
+  {
+    name: t('articles'),
+    href: 'article',
+    color: 'emerald'
   }
-  // {
-  //   name: t('articles'),
-  //   href: 'article',
-  //   color: 'emerald'
-  // }
 ]
 
 const colorVariants: Record<string, string> = {
@@ -126,6 +126,7 @@ const colorVariants: Record<string, string> = {
     opacity = clamp(opacity, fromOpacity, toOpacity)
 
     setProperty('--title-opacity', opacity.toString())
+    setProperty('--header-opacity', (1 - opacity).toString())
   }
 
   function clamp (number: number, a: number, b: number) {
