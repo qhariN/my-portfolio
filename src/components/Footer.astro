@@ -15,27 +15,27 @@ const socials = [
 ]
 ---
 
-<footer class="w-full">
+<footer class="w:full">
   <Divider />
-  <div class="max-w-screen-md mx-auto px-5 sm:px-6 lg:px-8 flex flex-col items-center space-y-2 pt-3 pb-4">
+  <div class="max-w:sm mx:auto px:20 px:24@xs px:32@md flex flex:col ai:center gap:8 pt:12 pb:16">
     <p>{t('projectMadeWith')}</p>
-    <div class="flex flex-wrap justify-center gap-4 mb-2">
+    <div class="flex flex:wrap jc:center gap:16 mb:8">
       {technologies.map(item => (
-        <div class="h-9 w-9">
-          <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        <div class="h:36 w:36">
+          <img class="w:full h:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
         </div>
       ))}
     </div>
   </div>
   <Divider />
-  <div class="max-w-screen-md mx-auto px-5 sm:px-6 lg:px-8 flex items-center w-full text-xs py-3">
+  <div class="max-w:sm mx:auto px:20 px:24@xs px:32@md py:12 flex ai:center w:full f:12">
     <div class="flex">
       <span>{t('developedWithLove')} <u>Jhorman Rus</u></span>
     </div>
-    <div class="flex items-center gap-3 ml-auto">
+    <div class="flex ai:center gap:12 ml:auto">
       {socials.map(item => (
-        <a class={`h-5 w-5 ${item.invert && 'dark:invert'}`} href={item.href} target="_blank" rel="noreferrer">
-          <img class="w-full h-full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        <a class={`w:20 h:20 ${item.invert && 'invert(1)@dark'}`} href={item.href} target="_blank" rel="noreferrer">
+          <img class="w:full h:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
         </a>
       ))}
     </div>

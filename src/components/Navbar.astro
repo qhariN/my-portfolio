@@ -21,39 +21,33 @@ const navigation = [
     color: 'emerald'
   }
 ]
-
-const colorVariants: Record<string, string> = {
-  orchid: 'text-orchid bg-orchid/20 hover:bg-orchid/30 border-orchid/20 decoration-orchid shadow-lg shadow-orchid/10',
-  emerald: 'text-emerald bg-emerald/20 hover:bg-emerald/30 border-emerald/20 decoration-emerald shadow-lg shadow-emerald/10',
-  mimosa: 'text-mimosa bg-mimosa/20 hover:bg-mimosa/30 border-mimosa/20 decoration-mimosa shadow-lg shadow-mimosa/10'
-}
 ---
 
-<div id="ghost" class="mt-[-4rem]"></div>
-<nav class="w-full sticky top-0 bg-white/20 dark:bg-zinc/30 backdrop-blur">
-  <div class="max-w-screen-md space-y-4 mx-auto px-5 py-4 sm:px-6 lg:px-8">
-    <a href="#" class="flex items-center gap-4">
-      <div class='w-12 h-12'>
-        <div class="origin-bottom-left" style={{ transform: 'var(--avatar-image-transform)' }}>
-          <img class='w-full h-full rounded-full grayscale' src="/img/profile.webp" alt="profile" />
+<div id="ghost" class="mt:-64"></div>
+<nav class="w:full sticky top:0 bg:white/.2 bg:zinc/.3@dark bd:blur(8)">
+  <div class="max-w:sm flex flex:col gap:16 px:20 py:16 px:24@xs px:32@md">
+    <a href="#" class="flex ai:center gap:16">
+      <div class='w:48 h:48'>
+        <div class="transform:bottom|left" style={{ transform: 'var(--avatar-image-transform)' }}>
+          <img class='w:full h:full round grayscale(1)' src="/img/profile.webp" alt="profile" />
         </div>
       </div>
-      <div class="flex flex-col font-semibold" style={{ opacity: 'var(--title-opacity)' }}>
-        <span class="text-lg">Jhorman Ruswel</span>
-        <span class="text-sm text-gray dark:text-gray/80">Tito Tito</span>
+      <div class="flex flex:col f:semibold" style={{ opacity: 'var(--title-opacity)' }}>
+        <span class="f:18">Jhorman Ruswel</span>
+        <span class="f:14 f:gray f:gray/.8@dark">Tito Tito</span>
       </div>
     </a>
-    <div class="flex items-center justify-between">
-      <ul id="navigation" class="flex items-center gap-2 text-sm text-gray dark:text-gray font-bold">
+    <div class="flex ai:center ji:space-between">
+      <ul id="navigation" class="flex ai:center gap:8 f:xs f:gray f:bold">
         {navigation.map(item => (
           <li>
-            <a class={colorVariants[item.color]} href={`#${item.href}`}>
+            <a class={`f:${item.color} bg:${item.color}/.2 bg:${item.color}/.3:hover b:${item.color}/.2 text-decoration:${item.color} shadow`} href={`#${item.href}`}>
               <>{item.name}</>
             </a>
           </li>
         ))}
       </ul>
-      <div class="flex items-center gap-2">
+      <div class="flex ai:center gap:8">
         <ThemeToggler />
         <LanguageSwitcher />
       </div>
@@ -153,9 +147,17 @@ const colorVariants: Record<string, string> = {
 
 <style>
   #navigation a {
-    @apply flex items-center gap-2 p-3 capitalize rounded-2xl border-b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    text-transform: capitalize;
+    border-radius: 16px;
+    border-bottom-width: 1px;
   }
   #navigation a.active {
-    @apply underline underline-offset-[3px] decoration-[3px];
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
   }
 </style>
