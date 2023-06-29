@@ -16,9 +16,9 @@ const repository = await response.json()
     <h3 class="f:14 f:bold">{project.name}</h3>
     <p class="f:12 flex-grow:1">{repository?.description}</p>
     <ul class="flex flex:wrap gap:8 f:12 f:gray">
-      <!-- {repository?.topics.map((topic: string) => (
+      {repository?.topics.map((topic: string) => (
         <li>#{topic}</li>
-      ))} -->
+      ))}
     </ul>
     <div class="flex gap:16 mt:8 f:14 {bg:navy/.1;f:navy;r:12}>a:hover">
       <a href={'repository?.html_url'} target="_blank" rel="noreferrer">

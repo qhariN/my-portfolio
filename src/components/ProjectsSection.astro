@@ -5,16 +5,16 @@ import projectsList from '../../public/json/projects.json'
 import CardProject from './CardProject.astro';
 ---
 
-<section id="projects" class='flex flex-col'>
-  <div class="space-y-2">
-    <h2 class='text-2xl font-bold capitalize'>{t('projects')}</h2>
+<section id="projects" class='flex flex:col'>
+  <div class="flex flex:col gap:8">
+    <h2 class='f:24 f:bold capitalize'>{t('projects')}</h2>
     <p>
       <Trans i18nKey="projectsDescription">
-        <a href="https://github.com/jhormanrus" class="font-bold hover:underline decoration-navy decoration-2" />
+        <a href="https://github.com/jhormanrus" class="f:bold text-decoration:underline|navy|solid|2:hover" />
       </Trans>
     </p>
   </div>
-  <div class='flex flex-col gap-4 mt-6'>
+  <div class='flex flex:col gap:16 mt:24'>
     {projectsList.filter(project => project.visible).map((project, i) => (
       <CardProject project={project} reverse={i % 2 === 0} />
     ))}
