@@ -9,17 +9,18 @@ const myGithub = await response.json()
   <div class='flex flex:col gap:12'>
     <div class="flex ai:center gap:20">
       <div class="w:64 h:64 flex-shrink:0"></div>
-      <div>
+      <div class="flex flex:col gap:4">
         <h1 class='f:24 f:semibold'>{t('hiIm')} Jhorman</h1>
         <h2 class='f:18 f:bold f:gray'>{t('webDeveloper')}</h2>
       </div>
     </div>
-    <p id="header-description" class="white-space:pre-wrap">
+    <p id="header-description" class="t:16">
       {t('welcome')}
+      <br />
       {t('myDescription')}
     </p>
   </div>
-  <div class="flex-shrink:0 hidden flex@xs flex:col gap:8">
+  <div class="flex-shrink:0 hidden flex@xs flex:col gap:12">
     <a class="hyperlink" href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
       <img src="/svg/linkedin.svg" alt="linkedin logo" />
       Linkedin

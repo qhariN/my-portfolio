@@ -37,7 +37,9 @@ import Navbar from '../components/Navbar.astro'
     <HeadHrefLangs />
     <link rel="stylesheet" href="/styles/theme-toggler.css" />
     <script>
-      import '@master/css'
+      import MasterCSS from '@master/css'
+      import config from '../../master.css'
+      export const css = new MasterCSS(config)
     </script>
   </head>
   <body class="flex flex:col ai:center min-h:100vh f:white@dark bg:zinc@dark rel">

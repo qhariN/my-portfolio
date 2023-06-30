@@ -9,7 +9,7 @@ module.exports = {
   overrides: [
     {
       // https://github.com/ota-meshi/eslint-plugin-astro/issues/132
-      files: ['**/*.astro/*.js', '*.astro/*.js'],
+      files: ['*.ts', '**/*.astro/*.js', '*.astro/*.js'],
       parser: '@typescript-eslint/parser'
     }
   ]

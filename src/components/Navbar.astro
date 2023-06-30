@@ -25,19 +25,19 @@ const navigation = [
 
 <div id="ghost" class="mt:-64"></div>
 <nav class="w:full sticky top:0 bg:white/.2 bg:zinc/.3@dark bd:blur(8)">
-  <div class="max-w:sm flex flex:col gap:16 px:20 py:16 px:24@xs px:32@md">
+  <div class="max-w:sm flex flex:col gap:16 mx:auto px:20 py:16 px:24@xs px:32@md">
     <a href="#" class="flex ai:center gap:16">
       <div class='w:48 h:48'>
-        <div class="transform:bottom|left" style={{ transform: 'var(--avatar-image-transform)' }}>
+        <div class="transform:bottom|left transform:$(avatar-image-transform)">
           <img class='w:full h:full round grayscale(1)' src="/img/profile.webp" alt="profile" />
         </div>
       </div>
-      <div class="flex flex:col f:semibold" style={{ opacity: 'var(--title-opacity)' }}>
+      <div class="flex flex:col f:semibold opacity:$(title-opacity)">
         <span class="f:18">Jhorman Ruswel</span>
         <span class="f:14 f:gray f:gray/.8@dark">Tito Tito</span>
       </div>
     </a>
-    <div class="flex ai:center ji:space-between">
+    <div class="flex ai:center jc:space-between">
       <ul id="navigation" class="flex ai:center gap:8 f:xs f:gray f:bold">
         {navigation.map(item => (
           <li>
