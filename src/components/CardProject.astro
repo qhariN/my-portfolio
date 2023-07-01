@@ -6,9 +6,9 @@ const response = await fetch(`https://api.github.com/repos/${project.github_name
 const repository = await response.json()
 ---
 
-<div class='flex ai:center gap:40' class:list={{ 'flex:col-reverse': reverse }}>
+<div class='flex ai:center gap:40' class:list={{ 'flex:row-reverse': reverse }}>
   {project.images.length > 0 && (
-    <div class={`img flex:1|1|0% relative m:16 z:-1 bg:${project.color}/.1:before b:${project.color}/.1:before`}>
+    <div class={`img flex:1|1|0% rel m:16 z:-1 bg:${project.color}/.1:before b:${project.color}/.1:before`}>
       <img class="w:full square obj:cover r:24 shadow rotate(-1deg)" src={project.images[0]} alt="desc" draggable="false" />
     </div>
   )}

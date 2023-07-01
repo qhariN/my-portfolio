@@ -57,7 +57,8 @@ const { pathname } = Astro.url
   })
 
   document.addEventListener('click', (e) => {
-    if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
+    const target = e.target as HTMLElement
+    if (!dropdownMenu.contains(target) && !menuButton.contains(target)) {
       menuButton.setAttribute('aria-expanded', 'false')
       dropdownMenu?.classList.add('leaving')
       dropdownMenu?.classList.remove('entering')
