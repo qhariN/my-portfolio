@@ -24,24 +24,24 @@ const navigation = [
 ---
 
 <div id="ghost" class="mt:-64"></div>
-<nav class="w:full sticky top:0 bg:white/.2 bg:zinc/.3@dark bd:blur(8)">
-  <div class="max-w:sm flex flex:col gap:16 mx:auto px:20 py:16 px:24@xs px:32@md">
+<nav class="sticky bd:blur(8) bg:white/.2 bg:zinc/.3@dark top:0 w:full">
+  <div class="flex flex:col gap:16 max-w:sm mx:auto px:20 px:24@xs px:32@md py:16">
     <a href="#" class="flex ai:center gap:16">
-      <div class='w:48 h:48'>
-        <div class="transform:bottom|left transform:$(avatar-image-transform)">
-          <img class='w:full h:full round grayscale(1)' src="/img/profile.webp" alt="profile" />
+      <div class='h:48 w:48'>
+        <div class="transform:$(avatar-image-transform) transform:bottom|left">
+          <img class='round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
         </div>
       </div>
-      <div class="flex flex:col f:semibold opacity:$(title-opacity)">
+      <div class="flex f:semibold flex:col opacity:$(title-opacity)">
         <span class="f:18">Jhorman Ruswel</span>
         <span class="f:14 f:gray f:gray/.8@dark">Tito Tito</span>
       </div>
     </a>
     <div class="flex ai:center jc:space-between">
-      <ul id="navigation" class="flex ai:center gap:8 f:xs f:gray f:bold">
+      <ul id="navigation" class="flex ai:center f:bold f:gray f:xs gap:8">
         {navigation.map(item => (
           <li>
-            <a class={`f:${item.color} bg:${item.color}/.2 bg:${item.color}/.3:hover b:${item.color}/.2 text-decoration:${item.color} shadow`} href={`#${item.href}`}>
+            <a class={`shadow b:${item.color}/.2 bg:${item.color}/.2 bg:${item.color}/.3:hover f:${item.color} text-decoration:${item.color}`} href={`#${item.href}`}>
               <>{item.name}</>
             </a>
           </li>

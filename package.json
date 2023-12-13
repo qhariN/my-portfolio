@@ -12,19 +12,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.2",
-    "@master/css": "^2.0.0-beta.159",
-    "@master/normal.css": "^2.0.0-beta.84",
+    "@master/css": "beta",
     "astro": "^4.0.4",
     "astro-i18next": "^1.0.0-beta.21"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
-    "eslint": "^8.43.0",
-    "eslint-config-standard-with-typescript": "^35.0.0",
-    "eslint-plugin-astro": "^0.27.2",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.7.0",
+    "@master/eslint-config-css": "beta",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-config-standard-with-typescript": "^42.0.0",
+    "eslint-plugin-astro": "^0.30.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.4.0",
     "eslint-plugin-promise": "^6.1.1"
   }
 }

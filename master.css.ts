@@ -1,7 +1,9 @@
 import type { Config } from '@master/css'
 
 const config: Config = {
-  colors: {
+  styles: {},
+  rules: {},
+  variables: {
     trasparent: 'transparent',
     current: 'currentColor',
     black: '#000000',
@@ -18,7 +20,12 @@ const config: Config = {
     emerald: '#009473',
     purple: '#5A5B9F',
     casper: '#B7CBD9'
-  }
+  },
+  semantics: {},
+  mediaQueries: {},
+  animations: {},
+  selectors: {},
+  functions: {}
 }
 
 export default config

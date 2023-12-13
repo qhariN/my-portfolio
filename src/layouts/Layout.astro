@@ -42,11 +42,11 @@ import Navbar from '../components/Navbar.astro'
       export const css = new MasterCSS(config)
     </script>
   </head>
-  <body class="flex flex:col ai:center min-h:100vh f:white@dark bg:zinc@dark rel">
+  <body class="flex rel ai:center bg:zinc@dark f:white@dark flex:col min-h:100vh">
     <div class="bg-gradient fixed inset:0"></div>
     <Header />
     <Navbar />
-    <main class="max-w:sm flex-grow:1 flex flex:col gap:40 p:20 py:24 p:24@xs p:32@md">
+    <main class="flex flex-grow:1 flex:col gap:40 max-w:sm p:20 p:24@xs p:32@md py:24">
       <slot />
     </main>
     <Footer />

@@ -1,16 +1,23 @@
 module.exports = {
   extends: [
+    '@master/css',
     'standard-with-typescript',
-    'plugin:astro/recommended'
   ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   parserOptions: {
+    extraFileExtensions: [".astro"],
     project: './tsconfig.json'
   },
   overrides: [
     {
-      // https://github.com/ota-meshi/eslint-plugin-astro/issues/132
-      files: ['*.ts', '**/*.astro/*.js', '*.astro/*.js'],
-      parser: '@typescript-eslint/parser'
+      files: ["*.astro"],
+      extends: ['plugin:astro/recommended'],
+      parser: "astro-eslint-parser",
     }
-  ]
+  ],
+  rules: {
+		'@typescript-eslint/triple-slash-reference': 'off'
+	},
+  ignorePatterns: ['*.cjs', '*.js']
 }

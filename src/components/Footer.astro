@@ -17,25 +17,25 @@ const socials = [
 
 <footer class="w:full">
   <Divider />
-  <div class="max-w:sm mx:auto px:20 px:24@xs px:32@md flex flex:col ai:center gap:8 pt:12 pb:16">
+  <div class="flex ai:center flex:col gap:8 max-w:sm mx:auto pb:16 pt:12 px:20 px:24@xs px:32@md">
     <p>{t('projectMadeWith')}</p>
-    <div class="flex flex:wrap jc:center gap:16 mb:8">
+    <div class="flex flex:wrap gap:16 jc:center mb:8">
       {technologies.map(item => (
         <div class="h:36 w:36">
-          <img class="w:full h:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+          <img class="h:full w:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
         </div>
       ))}
     </div>
   </div>
   <Divider />
-  <div class="max-w:sm mx:auto px:20 px:24@xs px:32@md py:12 flex ai:center w:full f:12">
+  <div class="flex ai:center f:12 max-w:sm mx:auto px:20 px:24@xs px:32@md py:12 w:full">
     <div class="flex">
       <span>{t('developedWithLove')} <u>Jhorman Rus</u></span>
     </div>
     <div class="flex ai:center gap:12 ml:auto">
       {socials.map(item => (
-        <a class={`w:20 h:20 ${item.invert && 'invert(1)@dark'}`} href={item.href} target="_blank" rel="noreferrer">
-          <img class="w:full h:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        <a class={`${item.invert && 'invert(1)@dark'} h:20 w:20`} href={item.href} target="_blank" rel="noreferrer">
+          <img class="h:full w:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
         </a>
       ))}
     </div>

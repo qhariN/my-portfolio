@@ -1,9 +1,3 @@
 {
-  "eslint.validate": [
-    "javascript",
-    "astro"
-  ],
-  "masterCSS.languages": [
-    "astro"
-  ]
+  "eslint.validate": ["typescript", "astro"]
 }
