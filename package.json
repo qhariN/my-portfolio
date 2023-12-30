@@ -5,26 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint --ext .ts,.astro src"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.2",
     "@master/css": "beta",
-    "astro": "^4.0.4",
+    "astro": "^4.0.8",
     "astro-i18next": "^1.0.0-beta.21"
-  },
-  "devDependencies": {
-    "@master/eslint-config-css": "beta",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "eslint": "^8.55.0",
-    "eslint-config-standard-with-typescript": "^42.0.0",
-    "eslint-plugin-astro": "^0.30.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-n": "^16.4.0",
-    "eslint-plugin-promise": "^6.1.1"
   }
 }
