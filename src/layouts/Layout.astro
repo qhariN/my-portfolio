@@ -4,6 +4,7 @@ import { HeadHrefLangs } from 'astro-i18next/components'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Navbar from '../components/Navbar.astro'
+import '@fontsource-variable/onest'
 ---
 
 <!DOCTYPE html>
@@ -37,9 +38,10 @@ import Navbar from '../components/Navbar.astro'
     <HeadHrefLangs />
     <link rel="stylesheet" href="/styles/theme-toggler.css" />
     <script>
-      import MasterCSS from '@master/css'
+      import { initRuntime } from '@master/css'
       import config from '../../master.css'
-      export const css = new MasterCSS(config)
+
+      initRuntime(config)
     </script>
   </head>
   <body class="flex rel ai:center bg:zinc@dark f:white@dark flex:col min-h:100vh">
@@ -55,16 +57,9 @@ import Navbar from '../components/Navbar.astro'
 
 <style is:global>
   @import '@master/normal.css';
-  @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
-  @font-face {
-    font-family: 'LovelyJackie';
-    src: url('/fonts/LovelyJackie.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  
   html {
-    font-family: 'Karla', cursive;
+    font-family: 'Onest Variable', sans-serif;
     scroll-behavior: smooth;
     scroll-padding-top: 170px;
   }
