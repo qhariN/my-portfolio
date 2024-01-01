@@ -23,16 +23,15 @@ const navigation = [
 ]
 ---
 
-<div id="ghost" class="mt:-64"></div>
 <nav class="sticky bd:blur(8) bg:white/.2 bg:zinc/.3@dark top:0 w:full">
-  <div class="flex flex:col gap:16 max-w:sm mx:auto px:20 px:24@xs px:32@md py:16">
+  <div class="flex flex:col gap:16 max-w:screen-sm mx:auto px:20 px:24@xs px:32@md py:16">
     <a href="#" class="flex ai:center gap:16">
       <div class='h:48 w:48'>
         <div class="transform:$(avatar-image-transform) transform:bottom|left">
-          <img class='round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
+          <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
         </div>
       </div>
-      <div class="flex f:semibold flex:col opacity:$(title-opacity)">
+      <div class="name flex f:semibold flex:col">
         <span class="f:18">Jhorman Ruswel</span>
         <span class="f:14 f:gray f:gray/.8@dark">Tito Tito</span>
       </div>
@@ -60,16 +59,11 @@ const navigation = [
   const html = document.querySelector('html') as HTMLElement
   const navigation = document.getElementById('navigation')
 
-  updateAvatarTransform()
-  updateTitleOpacity()
-
   window.addEventListener('scroll', handleScrollEvents, { passive: true })
   window.addEventListener("resize", handleScrollEvents, { passive: true })
 
   function handleScrollEvents () {
     updateActiveNavigation()
-    updateAvatarTransform()
-    updateTitleOpacity()
   }
 
   function updateActiveNavigation () {
@@ -87,77 +81,36 @@ const navigation = [
       }
     })
   }
-
-  function updateAvatarTransform () {
-    const downDelay = (document.getElementById('ghost') as HTMLElement).offsetTop ?? 0
-    const heroPaddingBottom = getElementComputedStyle('hero', 'padding-bottom')
-    const descriptionHeight = getElementComputedStyle('header-description', 'height')
-    const descriptionMarginTop = getElementComputedStyle('header-description', 'margin-top')
-
-    const fromScale = 1.33
-    const toScale = 1
-    const fromY = -(heroPaddingBottom + descriptionHeight + descriptionMarginTop)
-    const toY = 0
-
-    const scrollY = downDelay - window.scrollY
-
-    let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
-    scale = clamp(scale, fromScale, toScale)
-
-    let y = (scrollY * (fromY - toY)) / downDelay + toY
-    y = clamp(y, fromY, toY)
-
-    setProperty('--avatar-image-transform', `translate3d(0, ${y}rem, 0) scale(${scale})`)
-  }
-
-  function updateTitleOpacity () {
-    const downDelay = (document.getElementById('ghost') as HTMLElement).offsetTop ?? 0
-
-    const fromOpacity = 1
-    const toOpacity = 0
-
-    let opacity = (scrollY * (fromOpacity - toOpacity)) / downDelay + toOpacity
-    opacity = clamp(opacity, fromOpacity, toOpacity)
-
-    setProperty('--title-opacity', opacity.toString())
-    setProperty('--header-opacity', (1 - opacity).toString())
-  }
-
-  function clamp (number: number, a: number, b: number) {
-    const min = Math.min(a, b)
-    const max = Math.max(a, b)
-    return Math.min(Math.max(number, min), max)
-  }
-
-  function setProperty (property: string, value: string) {
-    document.documentElement.style.setProperty(property, value)
-  }
-
-  function getElementComputedStyle (id: string, property: string) {
-    const element = document.getElementById(id) as HTMLElement
-    const computedStyle = getComputedStyle(element)
-    const value = computedStyle.getPropertyValue(property)
-
-    const pixelsValue = parseFloat(value)
-    const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
-    const remValue = pixelsValue / rootFontSize
-    return remValue
-  }
 </script>
 
 <style>
-  #navigation a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px;
-    text-transform: capitalize;
-    border-radius: 16px;
-    border-bottom-width: 1px;
-  }
-  #navigation a.active {
-    text-decoration-line: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 3px;
-  }
+#navigation a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  text-transform: capitalize;
+  border-radius: 16px;
+  border-bottom-width: 1px;
+}
+#navigation a.active {
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
+}
+nav {
+  animation: background-up linear both;
+  animation-timeline: scroll();
+  animation-range: 0 var(--nav-offset-top);
+}
+.avatar {
+  animation: scale-down linear both;
+  animation-timeline: scroll();
+  animation-range: 0 var(--nav-offset-top);
+}
+.name {
+  animation: color-up linear both;
+  animation-timeline: scroll();
+  animation-range: 100px var(--nav-offset-top);
+}
 </style>
