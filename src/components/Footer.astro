@@ -1,32 +1,16 @@
 ---
 import { t } from 'i18next'
 import Divider from './Divider.astro'
-
-const technologies = [
-  { name: 'Javascript', icon: 'javascript.svg' },
-  { name: 'Astro', icon: 'astro.svg' },
-  { name: 'Tailwind CSS', icon: 'tailwindcss.svg' },
-  { name: 'Vercel', icon: 'vercel.svg' }
-]
+import GithubIcon from './icons/Github.astro'
+import LinkedinIcon from './icons/Linkedin.astro'
 
 const socials = [
-  { name: 'Github', href: 'https://github.com/jhormanrus', icon: 'github.svg', invert: true },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/jhormanrus/', icon: 'linkedin.svg', invert: false }
+  { icon: GithubIcon, href: 'https://github.com/jhormanrus' },
+  { icon: LinkedinIcon, href: 'https://linkedin.com/in/jhormanrus/' }
 ]
 ---
 
 <footer class="w:full">
-  <Divider />
-  <div class="flex ai:center flex:col gap:8 max-w:screen-sm mx:auto pb:16 pt:12 px:20 px:24@xs px:32@md">
-    <p>{t('projectMadeWith')}</p>
-    <div class="flex flex:wrap gap:16 jc:center mb:8">
-      {technologies.map(item => (
-        <div class="h:36 w:36">
-          <img class="h:full w:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
-        </div>
-      ))}
-    </div>
-  </div>
   <Divider />
   <div class="flex ai:center f:12 max-w:screen-sm mx:auto px:20 px:24@xs px:32@md py:12 w:full">
     <div class="flex">
@@ -34,8 +18,8 @@ const socials = [
     </div>
     <div class="flex ai:center gap:12 ml:auto">
       {socials.map(item => (
-        <a class={`${item.invert && 'invert(1)@dark'} h:20 w:20`} href={item.href} target="_blank" rel="noreferrer">
-          <img class="h:full w:full" src={`/svg/${item.icon}`} alt={item.name} title={item.name} />
+        <a href={item.href} target="_blank" rel="noreferrer">
+          <item.icon class="h:20" />
         </a>
       ))}
     </div>
