@@ -23,7 +23,7 @@ const myGithub = await response.json()
         <br />
         {t('myDescription')}
       </p>
-      <div class="flex@xs hidden flex-shrink:0 gap:20 mt:4 h:24_a>svg">
+      <div class="flex@xs hidden flex-shrink:0 gap:20 mt:4 gap:6>a h:24_a>svg">
         <a class="hyperlink" href={cvUrl} target="_blank" rel="noreferrer">
           <FileIcon />
           {t('myCv')}
@@ -33,7 +33,7 @@ const myGithub = await response.json()
           Linkedin
         </a>
         <a class="hyperlink" href={myGithub?.html_url} target="_blank" rel="noreferrer">
-          <GithubIcon class="p:1" />
+          <GithubIcon />
           {t('followersOnGithub', { followers: myGithub?.followers })}
         </a>
       </div>
@@ -46,7 +46,6 @@ const myGithub = await response.json()
   color: gray;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 .hyperlink:hover {
   text-decoration: underline;

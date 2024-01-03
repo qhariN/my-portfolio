@@ -46,7 +46,7 @@ import { Trans } from 'astro-i18next/components'
   <section class="flex flex:col gap:12">
     <h2 class="b:navy@dark bb:2 f:20 f:bold">{t('languages')}</h2>
     <ul class="f:navy::marker list-style:disc pl:20">
-      {(t('languagesList', { returnObjects: true }) as string[]).map((language, index) => (
+      {(t('languagesList', { returnObjects: true }) as string[]).map(language => (
         <li>{language}</li>
       ))}
     </ul>

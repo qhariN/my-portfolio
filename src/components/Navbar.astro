@@ -3,22 +3,28 @@ import { t } from 'i18next'
 import ThemeToggler from './ThemeToggler.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
 import Divider from './Divider.astro'
+import AppIcon from './icons/App.astro'
+import UserIcon from './icons/User.astro'
+import BookmarkIcon from './icons/Bookmark.astro'
 
 const navigation = [
   {
     name: t('projects'),
     href: 'projects',
-    color: 'mimosa'
+    color: 'mimosa',
+    icon: AppIcon
   },
   {
     name: t('aboutMe'),
     href: 'me',
-    color: 'orchid'
+    color: 'orchid',
+    icon: UserIcon
   },
   {
     name: t('articles'),
     href: 'article',
-    color: 'emerald'
+    color: 'emerald',
+    icon: BookmarkIcon
   }
 ]
 ---
@@ -37,10 +43,11 @@ const navigation = [
       </div>
     </a>
     <div class="flex ai:center jc:space-between">
-      <ul id="navigation" class="flex ai:center f:bold f:gray f:xs gap:8">
+      <ul id="navigation" class="flex ai:center f:medium f:gray f:xs gap:8">
         {navigation.map(item => (
           <li>
-            <a class={`shadow b:${item.color}/.2 bg:${item.color}/.2 bg:${item.color}/.3:hover f:${item.color} text-decoration:${item.color}`} href={`#${item.href}`}>
+            <a class={`shadow b:gray/.2 bg:gray/.2 bg:gray/.3:hover fg:gray text-decoration:gray`} href={`#${item.href}`}>
+              <item.icon class="h:24" />
               <>{item.name}</>
             </a>
           </li>
