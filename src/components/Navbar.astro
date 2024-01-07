@@ -33,9 +33,7 @@ const navigation = [
   <div class="flex flex:col gap:16 max-w:screen-sm mx:auto px:20 px:24@xs px:32@md py:16">
     <a href="#" class="flex ai:center gap:16">
       <div class='h:48 w:48'>
-        <div class="transform:$(avatar-image-transform) transform:bottom|left">
-          <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
-        </div>
+        <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
       </div>
       <div class="name flex f:semibold flex:col">
         <span class="f:18">Jhorman Ruswel</span>
@@ -43,16 +41,15 @@ const navigation = [
       </div>
     </a>
     <div class="flex ai:center jc:space-between">
-      <ul id="navigation" class="flex ai:center f:medium f:gray f:xs gap:8">
+      <nav id="navigation" class="flex ai:center f:medium f:gray f:xs">
         {navigation.map(item => (
-          <li>
-            <a class={`shadow b:gray/.2 bg:gray/.2 bg:gray/.3:hover fg:gray text-decoration:gray`} href={`#${item.href}`}>
-              <item.icon class="h:24" />
-              <>{item.name}</>
-            </a>
-          </li>
+          <a class="flex ai:center gap:6 fg:gray capitalize px:14 py:12" href={`#${item.href}`}>
+            <item.icon class="h:24" />
+            {item.name}
+          </a>
         ))}
-      </ul>
+      </nav>
+      <span id="indicator" class="bg:gray/.2 r:16 abs"></span>
       <div class="flex ai:center gap:8">
         <ThemeToggler />
         <LanguageSwitcher />
@@ -91,14 +88,51 @@ const navigation = [
 </script>
 
 <style>
-#navigation a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
-  text-transform: capitalize;
-  border-radius: 16px;
-  border-bottom-width: 1px;
+#indicator {
+  --transition: 0.165s;
+  top: anchor(--nav top);
+  bottom: anchor(--nav bottom);
+  left: calc(anchor(var(--active, --projects) left));
+  right: calc(anchor(var(--active, --projects) right));
+  z-index: -1;
+  scale: var(--visible, 0);
+  transition:
+    opacity var(--transition) 0s,
+    scale var(--transition) 0s,
+    left var(--transition) var(--transition) ease-in,
+    right var(--transition) var(--transition) ease-in;
+}
+[href="#projects"] {
+  anchor-name: --projects;
+}
+[href="#me"] {
+  anchor-name: --me;
+}
+[href="#article"] {
+  anchor-name: --article;
+}
+:root:has([href="#projects"]:is(:hover, :focus-visible)) {
+  --active: --projects;
+}
+:root:has([href="#me"]:is(:hover, :focus-visible)) {
+  --active: --me;
+}
+:root:has([href="#article"]:is(:hover, :focus-visible)) {
+  --active: --article;
+}
+:root:has(nav:is(:hover, :focus-within, :focus-visible)) {
+  --visible: 1;
+}
+:root:has(nav:is(:hover, :focus-within, :focus-visible)) #indicator {
+  --transition: 0.165s;
+  transition:
+    opacity var(--transition) var(--transition),
+    scale var(--transition) var(--transition),
+    left var(--transition) 0s ease-out,
+    right var(--transition) 0s ease-out;
+}
+#navigation {
+  anchor-name: --nav;
 }
 #navigation a.active {
   text-decoration-line: underline;
