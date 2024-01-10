@@ -10,11 +10,11 @@ const { pathname } = Astro.url
 ---
 
 <div class="inline-block rel text:left">
-  <button id="menu-button" class="shadow bg:blue/.2 bg:blue/.3:hover bg:blue/.1@dark bg:blue/.2:hover@dark f:blue p:8 round" type="button" title="Toggle theme" aria-haspopup="true" aria-expanded="false">
-    <LanguageIcon class="h:34" />
+  <button id="menu-button" class="bg:gray-70/.1 bg:gray-70/.2:hover fg:gray-40 fg:gray-80@dark p:8 round" type="button" title="Toggle theme" aria-haspopup="true" aria-expanded="false">
+    <LanguageIcon class="h:38" />
   </button>
 
-  <div id="dropdown-menu" class="leaving shadow abs ~duration:150ms ~easing:ease-out bg:white bg:zinc@dark mt:8 outline:none r:12 right:0 transform:top|right w:96 z:10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+  <div id="dropdown-menu" class="leaving abs ~duration:150ms ~easing:ease-out bg:white bg:zinc@dark mt:8 outline:none r:12 right:0 transform:top|right w:96 z:10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
     <div class="p:4" role="none">
       {
         supportedLanguages.map(language => {

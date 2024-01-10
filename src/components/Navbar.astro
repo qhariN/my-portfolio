@@ -28,21 +28,21 @@ const navigation = [
 ]
 ---
 
-<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:zinc/.3@dark top:0 flex gap:16 w:full max-w:screen-sm mx:auto px:20 px:24@xs px:26@md py:16 r:26">
+<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:zinc/.3@dark top:0 flex gap:24 w:full max-w:screen-sm mx:auto px:20 px:24@xs px:24@md py:13 r:26">
   <a href="#" class="flex ai:center gap:16 flex-shrink:0">
-    <div class='h:50 w:50'>
+    <div class='h:54 w:54'>
       <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
     </div>
     <div class="name flex f:semibold flex:col">
-      <span class="f:18">Jhorman Ruswel</span>
-      <span class="f:14 f:gray f:gray/.8@dark">Tito Tito</span>
+      <span class="f:18">Jhorman Tito</span>
+      <span class="f:14 fg:gray-50 fg:gray/.8@dark">Web Developer</span>
     </div>
   </a>
   <div class="flex ai:center jc:space-between w:full">
     <nav id="navigation" class="flex ai:center f:medium f:gray f:xs">
       {navigation.map(item => (
         <a class="flex ai:center gap:6 fg:gray-60 fg:gray-40[aria-current='page'] fg:gray-80[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
-          <item.icon class="h:34" />
+          <item.icon class="h:38" />
         </a>
       ))}
     </nav>
@@ -67,7 +67,7 @@ const navigation = [
 
   function updateActiveNavigation () {
     const fragments = document.querySelectorAll('section[id]')
-    const scrollPaddingTop = parseInt(window.getComputedStyle(html).scrollPaddingTop)
+    const scrollPaddingTop = parseInt(window.getComputedStyle(html).scrollPaddingTop) + 1
     const spaceBetween = 40
 
     fragments.forEach((fragment, i) => {
@@ -84,17 +84,15 @@ const navigation = [
 
 <style>
 #indicator {
-  --transition: 0.165s;
+  --transition: 0.08s;
   top: anchor(--nav top);
   bottom: anchor(--nav bottom);
   left: calc(anchor(var(--active, --projects) left));
   right: calc(anchor(var(--active, --projects) right));
   z-index: -1;
   transition:
-    opacity var(--transition) 0s,
-    scale var(--transition) 0s,
-    left var(--transition) var(--transition) ease-in,
-    right var(--transition) var(--transition) ease-in;
+    left var(--transition) var(--transition) linear,
+    right var(--transition) var(--transition) linear;
 }
 [href="#projects"] {
   anchor-name: --projects;
@@ -126,10 +124,8 @@ const navigation = [
 :root:has(nav:is(:hover, :focus-within, :focus-visible)) #indicator {
   --transition: 0.165s;
   transition:
-    opacity var(--transition) var(--transition),
-    scale var(--transition) var(--transition),
-    left var(--transition) 0s ease-out,
-    right var(--transition) 0s ease-out;
+    left var(--transition) 0s linear,
+    right var(--transition) 0s linear;
 }
 #navigation {
   anchor-name: --nav;
@@ -140,7 +136,7 @@ const navigation = [
   animation-range: 0 var(--nav-offset-top);
 }
 .name {
-  animation: color-up linear both;
+  animation: opacity-up linear both;
   animation-timeline: scroll();
   animation-range: 100px var(--nav-offset-top);
 }
