@@ -28,24 +28,24 @@ const navigation = [
 ]
 ---
 
-<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:zinc/.3@dark top:0 flex gap:24 w:full max-w:screen-sm mx:auto px:20 px:24@xs px:24@md py:13 r:26">
+<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:zinc/.3@dark flex gap:24 w:full max-w:screen-sm px:20 px:24@xs px:24@md py:13 r:26">
   <a href="#" class="flex ai:center gap:16 flex-shrink:0">
     <div class='h:54 w:54'>
       <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
     </div>
-    <div class="name flex f:semibold flex:col">
+    <div class="name flex f:semibold flex:col transition:opacity|200ms|ease-in opacity:0">
       <span class="f:18">Jhorman Tito</span>
       <span class="f:14 fg:gray-50 fg:gray/.8@dark">Web Developer</span>
     </div>
   </a>
-  <div class="flex ai:center jc:space-between w:full">
-    <nav id="navigation" class="flex ai:center f:medium f:gray f:xs">
+  <div class="flex ai:center jc:space-between w:full z:1">
+    <div id="navigation" class="flex ai:center f:medium f:gray f:xs transition:margin-left|150ms|linear ml:-207 ml:0.is-fixed">
       {navigation.map(item => (
-        <a class="flex ai:center gap:6 fg:gray-60 fg:gray-40[aria-current='page'] fg:gray-80[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
+        <a title={item.name} class="flex ai:center gap:6 fg:gray-60 fg:gray-40[aria-current='page'] fg:gray-80[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
           <item.icon class="h:38" />
         </a>
       ))}
-    </nav>
+    </div>
     <span id="indicator" class="bg:gray-70/.2 round abs"></span>
     <div class="flex ai:center gap:8">
       <ThemeToggler />
@@ -63,6 +63,18 @@ const navigation = [
 
   function handleScrollEvents () {
     updateActiveNavigation()
+    setFixedNavigation()
+  }
+
+  function setFixedNavigation () {
+    const scrollPosition = window.scrollY
+    const navOffsetTop = 387
+
+    if (navOffsetTop && scrollPosition > navOffsetTop) {
+      navigation?.classList.add('is-fixed')
+    } else {
+      navigation?.classList.remove('is-fixed')
+    }
   }
 
   function updateActiveNavigation () {
@@ -130,14 +142,12 @@ const navigation = [
 #navigation {
   anchor-name: --nav;
 }
+nav:has(#navigation.is-fixed) .name {
+  opacity: 1;
+}
 .avatar {
   animation: scale-down linear both;
   animation-timeline: scroll();
   animation-range: 0 var(--nav-offset-top);
-}
-.name {
-  animation: opacity-up linear both;
-  animation-timeline: scroll();
-  animation-range: 100px var(--nav-offset-top);
 }
 </style>

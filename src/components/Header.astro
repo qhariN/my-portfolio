@@ -10,33 +10,31 @@ const response = await fetch('https://api.github.com/users/jhormanrus')
 const myGithub = await response.json()
 ---
 
-<header id="hero" class="flex jc:center bg:white/.2 bg:zinc/.3@dark w:full">
-  <div class="flex gap:40 max-w:screen-sm py:32 py:80@md px:20 px:24@xs px:24@md z:1">
-    <div class="flex-shrink:0 h:200 w:200"></div>
-    <div class='flex flex:col gap:20'>
-      <div class="flex flex:col gap:6">
-        <h1 class='f:40 f:semibold'>{t('hiIm')} Jhorman</h1>
-        <h2 class='f:26 f:bold f:gray'>{t('webDeveloper')}</h2>
-      </div>
-      <p id="header-description" class="f:20 lh:1.4">
-        {t('welcome')}
-        <br />
-        {t('myDescription')}
-      </p>
-      <div class="flex@xs hidden flex-shrink:0 gap:20 mt:4 gap:6>a h:24_a>svg">
-        <a class="hyperlink" href={cvUrl} target="_blank" rel="noreferrer">
-          <FileIcon />
-          {t('myCv')}
-        </a>
-        <a class="hyperlink" href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
-          <LinkedinIcon class="p:2" />
-          Linkedin
-        </a>
-        <a class="hyperlink" href={myGithub?.html_url} target="_blank" rel="noreferrer">
-          <GithubIcon />
-          {t('followersOnGithub', { followers: myGithub?.followers })}
-        </a>
-      </div>
+<header id="hero" class="flex gap:40 max-w:screen-sm py:32 py:80@md px:20 px:24@xs px:24@md z:1">
+  <div class="flex-shrink:0 h:200 w:200"></div>
+  <div class='flex flex:col gap:20'>
+    <div class="flex flex:col gap:6">
+      <h1 class='f:40 f:semibold'>{t('hiIm')} Jhorman</h1>
+      <h2 class='f:26 f:bold f:gray'>{t('webDeveloper')}</h2>
+    </div>
+    <p id="header-description" class="f:20 lh:1.4">
+      {t('welcome')}
+      <br />
+      {t('myDescription')}
+    </p>
+    <div class="flex@xs hidden flex-shrink:0 gap:20 mt:4 gap:6>a h:24_a>svg">
+      <a class="hyperlink" href={cvUrl} target="_blank" rel="noreferrer">
+        <FileIcon />
+        {t('myCv')}
+      </a>
+      <a class="hyperlink" href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
+        <LinkedinIcon class="p:2" />
+        Linkedin
+      </a>
+      <a class="hyperlink" href={myGithub?.html_url} target="_blank" rel="noreferrer">
+        <GithubIcon />
+        {t('followersOnGithub', { followers: myGithub?.followers })}
+      </a>
     </div>
   </div>
 </header>
@@ -49,11 +47,6 @@ const myGithub = await response.json()
 }
 .hyperlink:hover {
   text-decoration: underline;
-}
-header {
-  animation: background-up linear both;
-  animation-timeline: scroll();
-  animation-range: 0 var(--nav-offset-top);
 }
 header > div {
   animation: opacity-down linear both;
