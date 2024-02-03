@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.0.2",
-    "@master/css": "beta",
-    "astro": "^4.1.1",
+    "@master/css-runtime": "rc",
+    "astro": "^4.3.2",
     "astro-i18next": "^1.0.0-beta.21"
   }
 }
