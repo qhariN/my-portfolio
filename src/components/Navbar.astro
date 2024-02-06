@@ -10,43 +10,40 @@ const navigation = [
   {
     name: t('projects'),
     href: 'projects',
-    color: 'mimosa',
     icon: AppIcon
   },
   {
     name: t('aboutMe'),
     href: 'me',
-    color: 'orchid',
     icon: UserIcon
   },
   {
     name: t('articles'),
     href: 'article',
-    color: 'emerald',
     icon: BookmarkIcon
   }
 ]
 ---
 
-<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:gray-10/.8@dark flex gap:24 w:full max-w:screen-sm px:20 px:24@xs px:24@md py:13 r:26 b:1 b:gray-50/.1 b:gray-50/.3@dark">
+<nav class="sticky top:10 bd:blur(8) bg:white/.8 bg:gray-90/.8@dark flex gap:24 w:full max-w:screen-sm px:20 px:24@xs px:24@md py:13 r:26 b:1 b:gray-50/.1 b:gray-50/.3@dark">
   <a href="#" class="flex ai:center gap:16 flex-shrink:0">
     <div class='h:54 w:54'>
       <img class='avatar round grayscale(1) h:full w:full' src="/img/profile.webp" alt="profile" />
     </div>
     <div class="name flex f:semibold flex:col transition:opacity|200ms|ease-in opacity:0">
       <span class="f:18">Jhorman Tito</span>
-      <span class="f:14 fg:gray-50 fg:gray/.8@dark">Web Developer</span>
+      <span class="f:14 fg:gray-50 fg:gray-50/.8@dark">Web Developer</span>
     </div>
   </a>
   <div class="flex ai:center jc:space-between w:full z:1">
-    <div id="navigation" class="flex ai:center f:medium f:gray f:xs transition:margin-left|150ms|linear ml:-207 ml:0.is-fixed">
+    <div id="navigation" class="flex ai:center f:medium f:gray-50 f:xs transition:margin-left|150ms|linear ml:-207 ml:0.is-fixed">
       {navigation.map(item => (
-        <a title={item.name} class="flex ai:center gap:6 fg:gray-60 fg:gray-40[aria-current='page'] fg:gray-80[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
+        <a title={item.name} class="flex ai:center gap:6 fg:gray-40 fg:gray-60[aria-current='page'] fg:gray-20[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
           <item.icon class="h:38" />
         </a>
       ))}
     </div>
-    <span id="indicator" class="bg:gray-70/.2 round abs"></span>
+    <span id="indicator" class="bg:gray-30/.2 round abs"></span>
     <div class="flex ai:center gap:8">
       <ThemeToggler />
       <LanguageSwitcher />

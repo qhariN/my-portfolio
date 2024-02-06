@@ -8,19 +8,19 @@ const repository = await response.json()
 
 <div class='flex ai:center gap:40' class:list={{ 'flex:row-reverse': reverse }}>
   {project.images.length > 0 && (
-    <div class={`img rel b:${project.color}/.1:before bg:${project.color}/.1:before flex:1|1|0% m:16 z:-1`}>
-      <img class="shadow square obj:cover r:24 rotate(-1deg) w:full" src={project.images[0]} alt="desc" draggable="false" />
+    <div class={`img rel b:cyan-50/.1:before bg:cyan-50/.1:before flex:1|1|0% m:16 z:-1`}>
+      <img class="square obj:cover r:24 rotate(-1deg) w:full" src={project.images[0]} alt="desc" draggable="false" />
     </div>
   )}
   <div class='flex flex:1|1|0% flex:col'>
     <h3 class="f:14 f:bold">{project.name}</h3>
     <p class="f:12 flex-grow:1">{repository?.description}</p>
-    <ul class="flex f:12 f:gray flex:wrap gap:8">
+    <ul class="flex f:12 fg:gray-50 flex:wrap gap:8">
       {repository?.topics.map((topic: string) => (
         <li>#{topic}</li>
       ))}
     </ul>
-    <div class="flex {bg:navy/.1;f:navy;r:12}>a:hover f:14 gap:16 mt:8">
+    <div class="flex {bg:cyan/.1;f:cyan;r:12}>a:hover f:14 gap:16 mt:8">
       <a href={'repository?.html_url'} target="_blank" rel="noreferrer">
         {t('source')}
       </a>
@@ -51,6 +51,9 @@ const repository = await response.json()
     z-index: -1;
     left: -5%;
     right: -5%;
+  }
+  .img>img {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   }
   a {
     display: flex;
