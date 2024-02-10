@@ -9,58 +9,35 @@ const currentLanguage = i18next.language
 const { pathname } = Astro.url
 ---
 
-<div class="inline-block rel text:left">
-  <button id="menu-button" class="bg:gray-30/.1 bg:gray-30/.2:hover fg:gray-40 fg:gray-60:hover fg:gray-20:hover@dark p:8 round" type="button" title="Switch language" aria-haspopup="true" aria-expanded="false">
-    <LanguageIcon class="h:38" />
-  </button>
-
-  <div id="dropdown-menu" class="leaving abs ~duration:150ms ~easing:ease-out bg:white bg:gray-95@dark mt:8 outline:none r:12 right:0 transform:top|right w:96 z:10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
-    <div class="p:4" role="none">
-      {
-        supportedLanguages.map(language => {
-          const value = localizePath(pathname, language)
-          const nativeName = iso6991.getNativeName(language)
-          return (
-            <a href={value} class="block bg:gray-80:where(.active,:active,:hover) f:xs px:12 py:8 r:8" class:list={{ active: language === currentLanguage }} role="menuitem" tabindex="-1">
-              {nativeName}
-            </a>
-          )
-        })
-      }
-    </div>
+<button id="menu-button" popovertarget="dropdown-menu" class="bg:gray-30/.1 bg:gray-30/.2:hover fg:gray-40 fg:gray-60:hover fg:gray-20:hover@dark p:8 round" type="button" title="Switch language">
+  <LanguageIcon class="h:38" />
+</button>
+<div id="dropdown-menu" popover anchor="menu-button" class="{position-fallback:--fallback} ~duration:150ms ~easing:ease-out bg:white bg:gray-95@dark outline:none r:12 w:96">
+  <div class="p:4" role="none">
+    {
+      supportedLanguages.map(language => {
+        const value = localizePath(pathname, language)
+        const nativeName = iso6991.getNativeName(language)
+        return (
+          <a href={value} class="block bg:gray-80:where(.active,:active,:hover) f:xs px:12 py:8 r:8" class:list={{ active: language === currentLanguage }} role="menuitem" tabindex="-1">
+            {nativeName}
+          </a>
+        )
+      })
+    }
   </div>
 </div>
 
 <style>
-  .entering {
-    opacity: 1;
-    transform: scale(1);
-  }
-  .leaving {
-    opacity: 0;
-    transform: scale(0.95);
-    visibility: hidden;
+  @position-fallback --fallback {
+    @try {
+      bottom: calc(anchor(top) + 8px);
+      right: anchor(right);
+    }
+
+    @try {
+      top: calc(anchor(bottom) + 8px);
+      right: anchor(right);
+    }
   }
 </style>
-
-<script>
-  const menuButton = document.getElementById('menu-button') as HTMLButtonElement
-  const dropdownMenu = document.getElementById('dropdown-menu') as HTMLDivElement
-
-  menuButton?.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true'
-    menuButton.setAttribute('aria-expanded', expanded ? 'false' : 'true')
-
-    dropdownMenu?.classList.toggle('leaving')
-    dropdownMenu?.classList.toggle('entering')
-  })
-
-  document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement
-    if (!dropdownMenu.contains(target) && !menuButton.contains(target)) {
-      menuButton.setAttribute('aria-expanded', 'false')
-      dropdownMenu?.classList.add('leaving')
-      dropdownMenu?.classList.remove('entering')
-    }
-  })
-</script>
