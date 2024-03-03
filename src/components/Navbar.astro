@@ -39,7 +39,9 @@ const navigation = [
     <div id="navigation" class="flex ai:center f:medium f:gray-50 f:xs transition:margin-left|150ms|linear ml:-207 ml:0.is-fixed">
       {navigation.map(item => (
         <a title={item.name} class="flex ai:center gap:6 fg:gray-40 fg:gray-60[aria-current='page'] fg:gray-20[aria-current='page']@dark capitalize p:8" href={`#${item.href}`}>
-          <item.icon class="h:38" />
+          <item.icon class="h:38">
+            <title>{item.name}</title>
+          </item.icon>
         </a>
       ))}
     </div>
