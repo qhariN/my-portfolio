@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { t } from 'i18next'
 const { project, reverse } = Astro.props
 
@@ -8,8 +9,8 @@ const repository = await response.json()
 
 <div class='flex ai:center gap:40' class:list={{ 'flex:row-reverse': reverse }}>
   {project.images.length > 0 && (
-    <div class={`img rel b:cyan-50/.1:before bg:cyan-50/.1:before flex:1|1|0% m:16 z:-1`}>
-      <img class="square obj:cover r:24 rotate(-1deg) w:full" src={project.images[0]} alt="desc" draggable="false" />
+    <div class="img rel b:cyan-50/.1:before bg:cyan-50/.1:before m:16 z:-1">
+      <Image class="square obj:cover r:24 rotate(-1deg) w:full" src={project.images[0]} alt={project.name} width="120" height="120" draggable="false" loading="eager" />
     </div>
   )}
   <div class='flex flex:1|1|0% flex:col'>
