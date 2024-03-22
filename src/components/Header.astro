@@ -10,19 +10,17 @@ const response = await fetch('https://api.github.com/users/jhormanrus')
 const myGithub = await response.json()
 ---
 
-<header id="hero" class="flex gap:40 max-w:screen-sm py:32 py:80@md px:20 px:24@xs px:24@md z:1">
+<header id="hero" class="flex gap:40 max-w:screen-2xs py:32 py:80@md px:20 px:24@xs px:24@md z:1">
   <div class="flex-shrink:0 h:200 w:200"></div>
   <div class='flex flex:col gap:20'>
     <div class="flex flex:col gap:6">
-      <h1 class='f:40 f:semibold'>{t('hiIm')} Jhorman</h1>
-      <h2 class='f:26 f:bold fg:gray-50'>{t('webDeveloper')}</h2>
+      <h2 class='f:22 f:semibold fg:gray-50'>{t('webDeveloper')}</h2>
+      <h1 class='f:28 f:semibold'>{t('hiIm')} Jhorman</h1>
     </div>
-    <p id="header-description" class="f:20 lh:1.4">
-      {t('welcome')}
-      <br />
+    <p id="header-description" class="f:18 lh:1.4">
       {t('myDescription')}
     </p>
-    <div class="flex@xs hidden flex-shrink:0 gap:20 mt:4 gap:6>a h:24_a>svg">
+    <div class="flex@xs hidden flex-shrink:0 gap:20 mt:6 gap:4>a h:24_a>svg">
       <a class="hyperlink" href={cvUrl} target="_blank" rel="noreferrer">
         <FileIcon />
         {t('myCv')}

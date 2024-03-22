@@ -47,7 +47,7 @@ import '@fontsource-variable/onest'
   <body class="flex rel ai:center bg:gray-5 bg:gray-95@dark flex:col min-h:100vh">
     <Header />
     <Navbar />
-    <main class="flex flex-grow:1 flex:col gap:40 max-w:screen-sm p:20 p:24@xs p:32@md py:24">
+    <main class="flex flex-grow:1 flex:col gap:40 max-w:screen-2xs py:24">
       <slot />
     </main>
     <Footer />
@@ -58,7 +58,7 @@ import '@fontsource-variable/onest'
 @import '@master/normal.css';
 
 :root {
-  --nav-offset-top: 387px;
+  --nav-offset-top: 362px;
 }
 html {
   font-family: 'Onest Variable', sans-serif;
@@ -72,7 +72,7 @@ html.dark {
   from {
     scale: 3.7037; /* final size / initial size */
     transform-origin: top left;
-    translate: 0 -330.18px;
+    translate: 0 -305.55px;
   }
 }
 @keyframes opacity-down {
