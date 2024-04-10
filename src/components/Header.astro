@@ -4,9 +4,10 @@ import FileIcon from './icons/File.astro'
 import GithubIcon from './icons/Github.astro'
 import LinkedinIcon from './icons/Linkedin.astro'
 
+const USERNAME = process.env.USERNAME
 const cvUrl = 'https://docs.google.com/document/d/1sSCi1jCz8tC3mr9U_BRd3inHQOpgRf9hKX_WoCModu4'
 
-const response = await fetch('https://api.github.com/users/jhormanrus')
+const response = await fetch(`https://api.github.com/users/${USERNAME}`)
 const myGithub = await response.json()
 ---
 
@@ -25,7 +26,7 @@ const myGithub = await response.json()
         <FileIcon />
         {t('myCv')}
       </a>
-      <a class="hyperlink" href="https://linkedin.com/in/jhormanrus/" target="_blank" rel="noreferrer">
+      <a class="hyperlink" href={`https://linkedin.com/in/${USERNAME}`} target="_blank" rel="noreferrer">
         <LinkedinIcon class="p:2" />
         Linkedin
       </a>

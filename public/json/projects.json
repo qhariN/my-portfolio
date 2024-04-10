@@ -7,7 +7,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1667969851/my-repositories/nextjs-scraper-playground/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/nextjs-scraper-playground",
+    "github_name": "qhariN/nextjs-scraper-playground",
     "color": "red"
   },
   {
@@ -18,7 +18,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1671306351/my-repositories/bibdle/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/bibdle",
+    "github_name": "qhariN/bibdle",
     "color": "blue"
   },
   {
@@ -29,7 +29,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1679711118/my-repositories/stickerland/1.webp"
     ],
     "visible": true,
-    "github_name": "jhormanrus/Stickerland",
+    "github_name": "qhariN/Stickerland",
     "color": "orchid"
   },
   {
@@ -41,7 +41,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1648782340/my-repositories/edulingo/2.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/EduLingo",
+    "github_name": "qhariN/EduLingo",
     "color": "emerald"
   },
   {
@@ -52,7 +52,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1679711392/my-repositories/generate-function-name/1.webp"
     ],
     "visible": true,
-    "github_name": "jhormanrus/generateFunctionName",
+    "github_name": "qhariN/generateFunctionName",
     "color": "mimosa"
   },
   {
@@ -63,7 +63,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1650001781/my-repositories/himnario-adventista/1.png"
     ],
     "visible": true,
-    "github_name": "jhormanrus/himnario-adventista-broadcast",
+    "github_name": "qhariN/himnario-adventista-broadcast",
     "color": "purple"
   },
   {
@@ -74,7 +74,7 @@
       "https://res.cloudinary.com/jhormanrus/image/upload/v1648790467/my-repositories/foxbel/1.jpg"
     ],
     "visible": true,
-    "github_name": "jhormanrus/Foxbel",
+    "github_name": "qhariN/Foxbel",
     "color": "orange"
   },
   {
@@ -83,7 +83,7 @@
     "name": "My portfolio",
     "images": [],
     "visible": false,
-    "github_name": "jhormanrus/my-portfolio"
+    "github_name": "qhariN/my-portfolio"
   },
   {
     "npm": "https://www.npmjs.com/package/@jhormanrus/zxcvbn-lang-es",
@@ -91,7 +91,7 @@
     "name": "zxcvbn",
     "images": [],
     "visible": false,
-    "github_name": "jhormanrus/zxcvbn"
+    "github_name": "qhariN/zxcvbn"
   },
   {
     "npm": null,
@@ -99,7 +99,7 @@
     "name": "Himnario Adventista API",
     "images": [],
     "visible": false,
-    "github_name": "jhormanrus/himnario-adventista-api"
+    "github_name": "qhariN/himnario-adventista-api"
   },
   {
     "npm": null,
@@ -107,6 +107,6 @@
     "name": "Biblia API",
     "images": [],
     "visible": false,
-    "github_name": "jhormanrus/biblia-api"
+    "github_name": "qhariN/biblia-api"
   }
 ]

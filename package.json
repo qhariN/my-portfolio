@@ -14,5 +14,8 @@
     "@master/css-runtime": "rc",
     "astro": "^4.6.1",
     "astro-i18next": "^1.0.0-beta.21"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.12"
   }
 }

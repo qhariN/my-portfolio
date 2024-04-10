@@ -1,6 +1,8 @@
 ---
 import i18next, { t } from 'i18next'
 import { Trans } from 'astro-i18next/components'
+
+const USERNAME = process.env.USERNAME
 ---
 
 <section id="me" class="flex flex:col gap:36">
@@ -11,8 +13,8 @@ import { Trans } from 'astro-i18next/components'
   <section>
     <ul class="fg:cyan-50::marker list-style:disc pl:20">
       <li><b>{t('email')}</b> - jhormanrus [at] gmail [dot] com</li>
-      <li><b>LinkedIn</b> - <a href="https://linkedin.com/in/jhormanrus/" class="text-decoration:underline|cyan-50|solid|2:hover">Jhorman Ruswel Tito Tito</a></li>
-      <li><b>Github</b> - <a href="https://github.com/jhormanrus" class="text-decoration:underline|cyan-50|solid|2:hover">jhormanrus</a></li>
+      <li><b>LinkedIn</b> - <a href={`https://linkedin.com/in/${USERNAME}`} class="text-decoration:underline|cyan-50|solid|2:hover">Jhorman Ruswel Tito Tito</a></li>
+      <li><b>Github</b> - <a href={`https://github.com/${USERNAME}`} class="text-decoration:underline|cyan-50|solid|2:hover">qhariN</a></li>
     </ul>
   </section>
   <section class="flex flex:col gap:12">

@@ -2,7 +2,9 @@
 import { t } from 'i18next'
 import { Trans } from 'astro-i18next/components'
 import projectsList from '../../public/json/projects.json'
-import CardProject from './CardProject.astro';
+import CardProject from './CardProject.astro'
+
+const USERNAME = process.env.USERNAME
 ---
 
 <section id="projects" class='flex flex:col'>
@@ -10,7 +12,7 @@ import CardProject from './CardProject.astro';
     <h2 class='capitalize f:24 f:bold'>{t('projects')}</h2>
     <p>
       <Trans i18nKey="projectsDescription">
-        <a href="https://github.com/jhormanrus" class="f:bold text-decoration:underline|cyan-50|solid|2:hover" />
+        <a href={`https://github.com/${USERNAME}`} class="f:bold text-decoration:underline|cyan-50|solid|2:hover" />
       </Trans>
     </p>
   </div>

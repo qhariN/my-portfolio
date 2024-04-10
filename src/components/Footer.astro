@@ -4,9 +4,11 @@ import Divider from './Divider.astro'
 import GithubIcon from './icons/Github.astro'
 import LinkedinIcon from './icons/Linkedin.astro'
 
+const USERNAME = process.env.USERNAME
+
 const socials = [
-  { icon: GithubIcon, href: 'https://github.com/jhormanrus' },
-  { icon: LinkedinIcon, href: 'https://linkedin.com/in/jhormanrus/' }
+  { icon: GithubIcon, href: `https://github.com/${USERNAME}` },
+  { icon: LinkedinIcon, href: `https://linkedin.com/in/${USERNAME}` }
 ]
 ---
 
