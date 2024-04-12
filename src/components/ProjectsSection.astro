@@ -3,22 +3,20 @@ import { t } from 'i18next'
 import { Trans } from 'astro-i18next/components'
 import projectsList from '../../public/json/projects.json'
 import CardProject from './CardProject.astro'
+import Card from './Card.astro'
 
 const USERNAME = process.env.USERNAME
 ---
 
-<section id="projects" class='flex flex:col'>
-  <div class="flex flex:col gap:8">
-    <h2 class='capitalize f:24 f:bold'>{t('projects')}</h2>
-    <p>
-      <Trans i18nKey="projectsDescription">
-        <a href={`https://github.com/${USERNAME}`} class="f:bold text-decoration:underline|cyan-50|solid|2:hover" />
-      </Trans>
-    </p>
-  </div>
-  <div class='flex flex:col gap:16 mt:24'>
-    {projectsList.filter(project => project.visible).map((project, i) => (
-      <CardProject project={project} reverse={i % 2 === 0} />
+<Card id="projects" title={t('projects')}>
+  <p slot="description">
+    <Trans i18nKey="projectsDescription">
+      <a href={`https://github.com/${USERNAME}`} class="f:bold text-decoration:underline|cyan-50|solid|2:hover" />
+    </Trans>
+  </p>
+  <div slot="content" class='flex flex:col gap:16 mt:24'>
+    {projectsList.filter(project => project.visible).map(project => (
+      <CardProject {project} />
     ))}
   </div>
-</section>
+</Card>

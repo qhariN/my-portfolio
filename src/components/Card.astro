@@ -1,0 +1,15 @@
+---
+const { id, title } = Astro.props
+---
+
+<section {id} class='flex flex:col bg:gray-5 bg:gray-90@dark p:30 r:26'>
+  <slot>
+    <div class="flex flex:col gap:8">
+      <h2 class='capitalize f:24 f:bold'>{title}</h2>
+      <slot name="description"></slot>
+    </div>
+    <div class='flex flex:col gap:16 mt:24'>
+      <slot name='content'></slot>
+    </div>
+  </slot>
+</section>
