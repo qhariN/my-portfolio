@@ -10,12 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/onest": "^5.0.3",
+    "@fontsource-variable/onest": "^5.0.4",
     "@master/css-runtime": "rc",
-    "astro": "^4.6.1",
+    "astro": "^4.11.5",
     "astro-i18next": "^1.0.0-beta.21"
   },
   "devDependencies": {
-    "@types/bun": "^1.0.12"
+    "@types/bun": "latest"
   }
 }
